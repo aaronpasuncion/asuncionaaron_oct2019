@@ -1,0 +1,404 @@
+@keyframes home-load-before {
+  0% {
+    height: 0;
+  }
+  50% {
+    height: 180px;
+    width: 0;
+    // border-left: 5px solid $primary-text-color;
+    border-left: 5px solid $dark-text;
+  }
+  100% {
+    width: 180px;
+    height: 180px;
+    // border-left: 5px solid $primary-text-color;
+    // border-top: 5px solid $primary-text-color;
+    border-top: 5px solid $dark-text;
+    border-left: 5px solid $dark-text;
+  }
+}
+
+@keyframes home-load-after {
+  0% {
+    height: 0;
+  }
+  50% {
+    height: 180px;
+    width: 0;
+    // border-right: 5px solid $primary-text-color;
+    border-right: 5px solid $dark-text;
+  }
+  100% {
+    width: 180px;
+    height: 180px;
+    // border-right: 5px solid $primary-text-color;
+    // border-bottom: 5px solid $primary-text-color;
+    border-bottom: 5px solid $dark-text;
+    border-right: 5px solid $dark-text;
+  }
+}
+
+// before and after functions
+@keyframes section-title-after {
+  0% {
+    height: 0;
+  }
+  50% {
+    height: 125px;
+    width: 0;
+    border-left: 5px solid;
+  }
+  100% {
+    width: 185px;
+    height: 125px;
+    border-top: 5px solid;
+    border-left: 5px solid;
+  }
+}
+
+@keyframes section-title-before {
+  0% {
+    height: 0;
+  }
+  50% {
+    height: 125px;
+    width: 0;
+    border-right: 5px solid;
+  }
+  100% {
+    width: 185px;
+    height: 125px;
+    border-bottom: 5px solid;
+    border-right: 5px solid;
+  }
+}
+
+@keyframes skills-before {
+  0% {
+    height: 0;
+  }
+  50% {
+    height: 400px;
+    width: 0;
+    border-left: 5px solid $emphasize;
+  }
+  100% {
+    width: 400px;
+    height: 400px;
+    border-top: 5px solid $emphasize;
+    border-left: 5px solid $emphasize;
+  }
+}
+
+@keyframes skills-after {
+  0% {
+    height: 0;
+  }
+  50% {
+    height: 400px;
+    width: 0;
+    border-right: 5px solid $dark-text;
+  }
+  100% {
+    width: 400px;
+    height: 400px;
+    border-bottom: 5px solid $dark-text;
+    border-right: 5px solid $dark-text;
+  }
+}
+
+@keyframes skill-box-anim {
+  from {
+    opacity: 0;
+    width: 440px;
+    height: 440px;
+  }
+  to {
+    opacity: 1;
+    width: 410px;
+    height: 410px;
+  }
+}
+
+@keyframes skill-box-anim-exit {
+  from {
+    opacity: 1;
+    width: 410px;
+    height: 410px;
+  }
+  to {
+    opacity: 0;
+    width: 440px;
+    height: 440px;
+  }
+}
+
+/* PROJECTS */
+@keyframes project-box-slide-in {
+  from {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+@keyframes project-box-slide-out {
+  from {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+  to {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+}
+
+@keyframes nav-link-anim {
+  from {
+    margin-top: 3em;
+    opacity: 0;
+  }
+  to {
+    margin-top: 0;
+    opacity: 1;
+  }
+}
+
+//
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in-left {
+  from {
+    opacity: 0;
+    margin-right: 3em;
+  }
+  to {
+    opacity: 1;
+    margin-right: 0;
+  }
+}
+
+@keyframes margin-slide-from-right {
+  from {
+    margin-left: 2em;
+  }
+  to {
+    margin-left: 0;
+  }
+}
+
+/*
+
+SLIDE FUNCTIONS
+
+*/
+
+@keyframes slide-in-x {
+  from {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+@keyframes slide-out-x {
+  from {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+  to {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+}
+
+@keyframes slide-in-y {
+  from {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+@keyframes slide-out-y {
+  from {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  to {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+}
+
+@keyframes slide-up-fade-out {
+  0% {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  90% {
+    opacity: 0;
+    transform: scaleY(1);
+  }
+
+  100% {
+    visibility: hidden;
+  }
+}
+/*
+
+HEIGHT AND WIDTH ANIMATIONS
+
+*/
+
+@keyframes full-width-animation {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+@keyframes width-to-zero {
+  from {
+    width: 100%;
+    opacity: 1;
+  }
+  to {
+    width: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes full-height-animation {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    height: 100%;
+  }
+}
+
+/*
+
+FADE ANIMATIONS
+
+*/
+
+@keyframes fade-out-right {
+  from {
+    opacity: 1;
+    margin-left: 0;
+  }
+  to {
+    opacity: 0;
+    margin-left: 1.5em;
+  }
+}
+
+@keyframes fade-out-left {
+  from {
+    opacity: 1;
+    margin-right: 0;
+  }
+  to {
+    opacity: 0;
+    margin-right: 1.5em;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    margin-top: 3em;
+  }
+  to {
+    opacity: 1;
+    margin-top: 0;
+  }
+}
+
+@keyframes fade-in-to-out {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+// animation classes
+.slide-out-y {
+  transform-origin: bottom;
+  transform: scaleY(0);
+  opacity: 1;
+  animation: slide-out-y 1s forwards;
+}
+
+.slide-out-x {
+  transform: scaleX(1);
+  opacity: 1;
+  animation: slide-out-x 1s forwards;
+}
+
+.slide-out-x-left {
+  transform: scaleX(1) !important;
+  opacity: 1 !important;
+  transform-origin: left !important;
+  animation: slide-out-x 1s forwards !important;
+}
+
+.slide-out-x-right {
+  transform: scaleX(1) !important;
+  opacity: 1 !important;
+  transform-origin: right !important;
+  animation: slide-out-x 1s forwards !important;
+}
+
+.animation-none {
+  animation: none;
+}
+
+.skill-box-anim-exit {
+  animation: skill-box-anim-exit 0.5s forwards !important;
+}
+
+.project-box-slide-out {
+  animation: project-box-slide-out 1s forwards !important;
+}

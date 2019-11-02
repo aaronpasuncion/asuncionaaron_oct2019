@@ -1,0 +1,7 @@
+@function set-nav-btn-color($color) {
+  @if (lightness($color) > 50) {
+    @return $dark-text-color; //black for light  backgrounds
+  } @else {
+    @return $primary-text-color; //white for dark background
+  }
+}
