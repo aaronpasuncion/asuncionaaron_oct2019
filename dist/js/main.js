@@ -246,6 +246,9 @@ const toggleSections = section => {
     prevSection !== null &&
     sectionClose();
 
+  section.id.toString() === aboutSection.id.toString() &&
+    aboutSection.classList.add("flex");
+
   // display the selected section
   section.classList.contains("hide")
     ? (section.classList.remove("display-none"),
@@ -268,7 +271,10 @@ const toggleSections = section => {
     setTimeout(() => {
       prevSection !== null &&
         (prevSection != prevSection.classList.add("display-none"),
-        prevSection.classList.add("hide"));
+        prevSection.classList.add("hide"),
+        prevSection.classList.contains("flex") &&
+          prevSection.id.toString() === aboutSection.id.toString() &&
+          prevSection.classList.remove("flex"));
     }, 3000);
 };
 
@@ -428,6 +434,7 @@ const sectionClose = () => {
         // hide the about section after the slide out animations play
         aboutSection.classList.add("display-none");
         aboutSection.classList.add("hide");
+        aboutSection.classList.remove("flex");
         // remove the slide out animations
         aboutHeader.classList.remove("section-header-slide-out");
         aboutContent.classList.remove("about-content-slide-out");
@@ -465,4 +472,5 @@ const sectionClose = () => {
 
   closeSection.classList.remove("visible");
   closeSection.classList.add("hide");
+  prevSection = null;
 };

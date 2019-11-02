@@ -97,13 +97,14 @@ body {
 }
 
 .about {
+  flex-direction: column;
   .section-header {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 3em;
     z-index: 1;
     position: relative;
-    height: 30vh;
     background: $red;
     opacity: 0;
     transform-origin: left;
