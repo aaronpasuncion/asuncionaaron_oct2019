@@ -36,7 +36,7 @@ var aboutWrapper = document.querySelector(".about-wrapper");
 /* SKILL SECTION */
 var skillsTitle = document.getElementById("skills-section-title");
 var frontEndSkills = document.getElementById("front-end-skills");
-var backEndSkills = document.getElementById("back-end-skills");
+var otherSkills = document.getElementById("other-skills");
 var skillsContent = document.querySelector(".skills-content");
 var bgOne = document.getElementById("bg-one");
 var bgTwo = document.getElementById("bg-two");
@@ -44,9 +44,10 @@ var bgOneAlt = document.getElementById("bg-one-alternate");
 var bgTwoAlt = document.getElementById("bg-two-alternate");
 var barGraph = document.getElementById("bar-graph");
 var bar = document.getElementsByClassName("bar");
-var backEndContent = document.getElementById("back-end-content");
+var otherSkillsContent = document.getElementById("other-skills-content");
 /* WORK SECTION */
 var projectBox = document.getElementsByClassName("project-box");
+var projectsContainer = document.querySelector(".projects");
 // project boxes
 var projectOne = document.querySelector(".project-1");
 var projectTwo = document.querySelector(".project-2");
@@ -93,7 +94,7 @@ function loadingScreen() {
     loadingTxt.style.opacity = 1;
     loadingTxt.innerHTML = "WELCOME";
     setTimeout(() => {
-      loadingTxt.style.opacity = 0;
+      loadingTxt.classList.add("loading-animation");
     }, 2000);
     setTimeout(() => {
       // loading
@@ -102,7 +103,7 @@ function loadingScreen() {
       toggleSections(home);
       // nav
       toggleSections(nav);
-    }, 00);
+    }, 4000);
   }
 }
 
@@ -123,8 +124,8 @@ frontEndSkills.addEventListener("click", () => {
   toggleSkills(frontEndSkills);
 });
 
-backEndSkills.addEventListener("click", () => {
-  toggleSkills(backEndSkills);
+otherSkills.addEventListener("click", () => {
+  toggleSkills(otherSkills);
 });
 
 // work section
@@ -241,13 +242,21 @@ const toggleSections = section => {
       (item.classList.remove("active"), (prevSection = item));
   });
 
+  closeSection.classList.add("disabled");
+
   // close active section if user navigates back to home section
   section.id.toString() === home.id.toString &&
     prevSection !== null &&
     sectionClose();
 
+  // about section unique styling
   section.id.toString() === aboutSection.id.toString() &&
-    aboutSection.classList.add("flex");
+    (aboutSection.classList.add("flex"),
+    toSkills.classList.remove("display-none"));
+
+  // to work styling
+  section.id.toString() === skillsSection.id.toString() &&
+    toWork.classList.remove("display-none");
 
   // display the selected section
   section.classList.contains("hide")
@@ -275,6 +284,7 @@ const toggleSections = section => {
         prevSection.classList.contains("flex") &&
           prevSection.id.toString() === aboutSection.id.toString() &&
           prevSection.classList.remove("flex"));
+      closeSection.classList.remove("disabled");
     }, 3000);
 };
 
@@ -294,7 +304,7 @@ const navAction = item => {
 // toggleSkills - function that  determines which skills content is to be displayed
 const toggleSkills = skill => {
   let otherSkill =
-    skill.id === frontEndSkills.id ? backEndSkills : frontEndSkills;
+    skill.id === frontEndSkills.id ? otherSkills : frontEndSkills;
   let animation = "fade-out";
 
   /*
@@ -307,11 +317,12 @@ const toggleSkills = skill => {
       // remove the active selection class
       skill.classList.remove("skill-selection-active"),
       // animate the backgrounds
-      bgOneAlt.classList.add("slide-out-y"),
-      bgTwoAlt.classList.add("slide-out-y"),
+      bgOneAlt.classList.add("slide-out-y-no-fade"),
+      bgTwoAlt.classList.add("slide-out-y-no-fade"),
       // close the content for the specific skill section
       skill.id === frontEndSkills.id && barGraph.classList.add("slide-out-y"),
-      skill.id === backEndSkills.id && backEndContent.classList.add(animation),
+      skill.id === otherSkills.id &&
+        otherSkillsContent.classList.add(animation),
       // setTimeout() function to add display none and add the section title animation
       // so the animation can be played first before displaying to none
       setTimeout(() => {
@@ -319,8 +330,8 @@ const toggleSkills = skill => {
         bgTwoAlt.classList.add("display-none");
         skill.id === frontEndSkills.id &&
           barGraph.classList.add("display-none");
-        skill.id === backEndSkills.id &&
-          backEndContent.classList.add("display-none");
+        skill.id === otherSkills.id &&
+          otherSkillsContent.classList.add("display-none");
         skillsTitle.classList.remove(animation);
       }, 750))
     : /* 
@@ -335,15 +346,15 @@ const toggleSkills = skill => {
       // add the active skill class to the currently selected section
       skill.classList.add("skill-selection-active"),
       // animate the backgrounds to swap colours
-      bgOneAlt.classList.add("slide-out-y"),
-      bgTwoAlt.classList.add("slide-out-y"),
+      bgOneAlt.classList.add("slide-out-y-no-fade"),
+      bgTwoAlt.classList.add("slide-out-y-no-fade"),
       // hide the otherSkills content
       otherSkill.id === frontEndSkills.id &&
         (barGraph.classList.add("slide-out-y"),
-        backEndContent.classList.remove(animation),
-        backEndContent.classList.remove("display-none")),
-      otherSkill.id === backEndSkills.id &&
-        (backEndContent.classList.add(animation),
+        otherSkillsContent.classList.remove(animation),
+        otherSkillsContent.classList.remove("display-none")),
+      otherSkill.id === otherSkills.id &&
+        (otherSkillsContent.classList.add(animation),
         barGraph.classList.remove("display-none"),
         barGraph.classList.remove("slide-out-y")),
       // remove the slide out animation of the current active skill content
@@ -351,9 +362,9 @@ const toggleSkills = skill => {
       setTimeout(() => {
         bgOneAlt.classList.add("display-none");
         bgTwoAlt.classList.add("display-none");
-        skill.id === backEndSkills.id && barGraph.classList.add("display-none");
+        skill.id === otherSkills.id && barGraph.classList.add("display-none");
         skill.id === frontEndSkills.id &&
-          backEndContent.classList.add("display-none");
+          otherSkillsContent.classList.add("display-none");
       }, 750))
     : /* 
      OPTION 3:
@@ -365,34 +376,60 @@ const toggleSkills = skill => {
       //animate the backgrounds to alternate the colours
       bgOneAlt.classList.remove("display-none"),
       bgTwoAlt.classList.remove("display-none"),
-      bgOneAlt.classList.remove("slide-out-y"),
-      bgTwoAlt.classList.remove("slide-out-y"),
+      bgOneAlt.classList.remove("slide-out-y-no-fade"),
+      bgTwoAlt.classList.remove("slide-out-y-no-fade"),
       //display the content for the specific skill section
       skill.id === frontEndSkills.id &&
         (barGraph.classList.remove("slide-out-y"),
         barGraph.classList.remove("display-none")),
-      skill.id === backEndSkills.id &&
-        (backEndContent.classList.remove("display-none"),
-        backEndContent.classList.remove(animation),
-        backEndContent.classList.remove("slide-out-y")),
+      skill.id === otherSkills.id &&
+        (otherSkillsContent.classList.remove("display-none"),
+        otherSkillsContent.classList.remove(animation),
+        otherSkillsContent.classList.remove("slide-out-y")),
       // add the fade out animation to the section title
       skillsTitle.classList.add(animation));
 };
 
 // projectSlideOut - add slide out classes to project box children
 const projectSlideOut = () => {
+  // create counter for the animation delay
+  let counter = 0;
   for (var i = 0; i < projectBox.length; i++) {
-    projectImg[i].classList.add("project-box-slide-out");
-    projectDesc[i].classList.add("project-box-slide-out");
+    // set the inital styling of the projectBox content
+    // add disabled class to the projectBoxes so they cannot be clicked while the animation is being played
+    projectBox[i].classList.add("disabled");
+    nav.classList.add("disabled");
+    projectImg[i].style.transform = "scaleY(1)";
+    projectDesc[i].style.transform = "scaleY(1)";
+    projectImg[i].style.opacity = 1;
+    projectDesc[i].style.opacity = 1;
+    // add the animations with the counter being implmented for the animation delay
+    projectImg[
+      i
+    ].style.animation = `project-box-slide-out 1s forwards ${counter}s `;
+    projectDesc[
+      i
+    ].style.animation = `project-box-slide-out 1s forwards ${counter}s `;
+    // add 0.2 to the counter through each cycle to increase animation delay for the next project
+    counter += 0.2;
   }
 
-  // remove the classes after the animation is completed
+  // remove the styling after the animation is completed
   setTimeout(() => {
     for (var i = 0; i < projectBox.length; i++) {
-      projectImg[i].classList.remove("project-box-slide-out");
-      projectDesc[i].classList.remove("project-box-slide-out");
+      // projectBox[i].classList.remove("disabled");
+      projectImg[i].style.animation = "";
+      projectDesc[i].style.animation = "";
+      projectImg[i].style.transform = "scaleY(0)";
+      projectDesc[i].style.transform = "scaleY(0)";
+      projectImg[i].style.opacity = 0;
+      projectDesc[i].style.opacity = 0;
     }
-  }, 2000);
+  }, 2250);
+  setTimeout(() => {
+    projectsContainer.classList.remove("diasbled");
+    nav.classList.remove("disabled");
+  }, 2500);
 };
 
 // projectDetailsShow - function to display the clicked project box
@@ -422,10 +459,12 @@ const projectDetailsHide = () => {
 
 // sectionClose - function to close the current section
 const sectionClose = () => {
+  /* ABOUT SECTION CLOSE */
   aboutSection.classList.contains("active")
     ? (aboutSection.classList.remove("active"),
       aboutWrapper.classList.add("fade-out"),
       aboutTitle.classList.add("fade-out"),
+      toSkills.classList.add("fade-out"),
       setTimeout(() => {
         aboutHeader.classList.add("section-header-slide-out"),
           aboutContent.classList.add("about-content-slide-out");
@@ -435,41 +474,57 @@ const sectionClose = () => {
         aboutSection.classList.add("display-none");
         aboutSection.classList.add("hide");
         aboutSection.classList.remove("flex");
-        // remove the slide out animations
+        // remove the slide/fade out animations
         aboutHeader.classList.remove("section-header-slide-out");
         aboutContent.classList.remove("about-content-slide-out");
         aboutWrapper.classList.remove("fade-out");
         aboutTitle.classList.remove("fade-out");
+        toSkills.classList.remove("fade-out");
       }, 2250))
-    : skillsSection.classList.contains("active")
+    : /* SKILLS SECTION CLOSE */
+    skillsSection.classList.contains("active")
     ? (skillsContent.classList.add("skill-box-anim-exit"),
       skillsSection.classList.remove("active"),
-      setTimeout(() => {
-        bgOne.classList.add("slide-out-y"),
-          bgOneAlt.classList.add("slide-out-y"),
-          bgTwo.classList.add("slide-out-y"),
-          bgTwoAlt.classList.add("slide-out-y");
-      }, 1250),
+      toWork.classList.add("fade-out"),
+      !bgOneAlt.classList.contains("display-none")
+        ? setTimeout(() => {
+            bgOne.classList.add("display-none");
+            bgOneAlt.classList.add("slide-out-y-no-fade");
+            bgTwo.classList.add("display-none");
+            bgTwoAlt.classList.add("slide-out-y-no-fade");
+          }, 1250)
+        : setTimeout(() => {
+            bgOne.classList.add("slide-out-y-no-fade");
+            bgTwo.classList.add("slide-out-y-no-fade");
+          }, 1250),
       setTimeout(() => {
         // after animation is complete, remove the hide animations
-        bgOne.classList.remove("slide-out-y");
-        bgOneAlt.classList.remove("slide-out-y");
-        bgTwo.classList.remove("slide-out-y");
-        bgTwoAlt.classList.remove("slide-out-y");
+        bgOne.classList.remove("slide-out-y-no-fade");
+        bgOneAlt.classList.remove("slide-out-y-no-fade");
+        bgOneAlt.classList.add("display-none");
+        bgTwo.classList.remove("display-none");
+        bgOne.classList.remove("display-none");
+        bgTwo.classList.remove("slide-out-y-no-fade");
+        bgTwoAlt.classList.remove("slide-out-y-no-fade");
+        bgTwoAlt.classList.add("display-none");
         skillsContent.classList.remove("skill-box-anim-exit");
         // hide the section and remove active status
         skillsSection.classList.add("display-none");
         skillsSection.classList.add("hide");
+        toWork.classList.remove("fade-out");
       }, 2250))
-    : workSection.classList.contains("active")
+    : /* WORK SECTION CLOSE */
+    workSection.classList.contains("active")
     ? (projectSlideOut(),
+      workSection.classList.remove("active"),
       setTimeout(() => {
         // hide the section and remove active status
         workSection.classList.add("display-none");
         workSection.classList.add("hide");
-      }, 1250))
+      }, 3250))
     : console.log(null);
 
+  // hide the 'close section' button
   closeSection.classList.remove("visible");
   closeSection.classList.add("hide");
   prevSection = null;

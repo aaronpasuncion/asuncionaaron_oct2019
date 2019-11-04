@@ -1,3 +1,13 @@
+@keyframes loading-animation {
+  from {
+    font-size: 4em;
+    opacity: 1;
+  }
+  to {
+    font-size: 6em;
+    opacity: 0;
+  }
+}
 @keyframes home-load-before {
   0% {
     height: 0;
@@ -6,15 +16,15 @@
     height: 180px;
     width: 0;
     // border-left: 5px solid $primary-text-color;
-    border-left: 5px solid $dark-text;
+    border-left: 5px solid $emphasize;
   }
   100% {
     width: 180px;
     height: 180px;
     // border-left: 5px solid $primary-text-color;
     // border-top: 5px solid $primary-text-color;
-    border-top: 5px solid $dark-text;
-    border-left: 5px solid $dark-text;
+    border-top: 5px solid $emphasize;
+    border-left: 5px solid $emphasize;
   }
 }
 
@@ -26,15 +36,15 @@
     height: 180px;
     width: 0;
     // border-right: 5px solid $primary-text-color;
-    border-right: 5px solid $dark-text;
+    border-right: 5px solid $emphasize;
   }
   100% {
     width: 180px;
     height: 180px;
     // border-right: 5px solid $primary-text-color;
     // border-bottom: 5px solid $primary-text-color;
-    border-bottom: 5px solid $dark-text;
-    border-right: 5px solid $dark-text;
+    border-bottom: 5px solid $emphasize;
+    border-right: 5px solid $emphasize;
   }
 }
 
@@ -255,6 +265,24 @@ SLIDE FUNCTIONS
   }
 }
 
+@keyframes slide-in-y-no-fade {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes slide-out-y-no-fade {
+  from {
+    transform: scaleY(1);
+  }
+  to {
+    transform: scaleY(0);
+  }
+}
+
 @keyframes slide-up-fade-out {
   0% {
     opacity: 0;
@@ -364,6 +392,9 @@ FADE ANIMATIONS
 }
 
 // animation classes
+.loading-animation {
+  animation: loading-animation 1s forwards;
+}
 .slide-out-y {
   transform-origin: bottom;
   transform: scaleY(0);

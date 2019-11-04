@@ -10,13 +10,13 @@
     50% {
       height: 220px;
       width: 0;
-      border-left: 5px solid $dark-text;
+      border-left: 5px solid $emphasize;
     }
     100% {
       width: 220px;
       height: 220px;
-      border-top: 5px solid $dark-text;
-      border-left: 5px solid $dark-text;
+      border-top: 5px solid $emphasize;
+      border-left: 5px solid $emphasize;
     }
   }
 
@@ -27,17 +27,17 @@
     50% {
       height: 220px;
       width: 0;
-      border-right: 5px solid $dark-text;
+      border-right: 5px solid $emphasize;
     }
     100% {
       width: 220px;
       height: 220px;
-      border-bottom: 5px solid $dark-text;
-      border-right: 5px solid $dark-text;
+      border-bottom: 5px solid $emphasize;
+      border-right: 5px solid $emphasize;
     }
   }
 
-  // before and after functions
+  // section title before and after functions (about)
   @keyframes section-title-after {
     0% {
       height: 0;
@@ -106,6 +106,10 @@
     font-size: 0.6em;
   }
 
+  .close-project-btn {
+    right: 1em;
+  }
+
   /* HOME STYLING */
   .logo {
     width: 230px;
@@ -156,13 +160,13 @@
     50% {
       height: 260px;
       width: 0;
-      border-left: 5px solid $dark-text;
+      border-left: 5px solid $emphasize;
     }
     100% {
       width: 260px;
       height: 260px;
-      border-top: 5px solid $dark-text;
-      border-left: 5px solid $dark-text;
+      border-top: 5px solid $emphasize;
+      border-left: 5px solid $emphasize;
     }
   }
 
@@ -173,13 +177,13 @@
     50% {
       height: 260px;
       width: 0;
-      border-right: 5px solid $dark-text;
+      border-right: 5px solid $emphasize;
     }
     100% {
       width: 260px;
       height: 260px;
-      border-bottom: 5px solid $dark-text;
-      border-right: 5px solid $dark-text;
+      border-bottom: 5px solid $emphasize;
+      border-right: 5px solid $emphasize;
     }
   }
 
@@ -204,7 +208,12 @@
       transform: scaleY(0);
     }
   }
+
   ///////////////////////////////////////////
+  /* BUTTONS */
+  .close-project-btn {
+    font-size: 1.25em;
+  }
   /* HOME STYLING */
   .logo {
     width: 270px;
@@ -302,6 +311,10 @@
       }
     }
   }
+
+  .project-full {
+    padding: 3em;
+  }
 }
 
 @media only screen and (min-width: 1025px) {
@@ -337,12 +350,31 @@
     align-self: center;
     bottom: auto;
     right: -20px;
+    font-size: 2em;
   }
 
   .to-work {
     right: -440px;
     font-size: 0.7em;
   }
+
+  .close-section {
+    font-size: 3em;
+  }
+
+  /* NAV */
+  .nav {
+    .nav-line {
+      height: 4px;
+      width: 1.75em;
+      margin-bottom: 0.25em;
+    }
+  }
+
+  .nav-link {
+    font-size: 2em;
+  }
+
   /* ABOUT */
   .about {
     flex-direction: row;
@@ -384,13 +416,13 @@
     50% {
       height: 300px;
       width: 0;
-      border-left: 5px solid $dark-text;
+      border-left: 5px solid $emphasize;
     }
     100% {
       width: 300px;
       height: 300px;
-      border-top: 5px solid $dark-text;
-      border-left: 5px solid $dark-text;
+      border-top: 5px solid $emphasize;
+      border-left: 5px solid $emphasize;
     }
   }
 
@@ -401,17 +433,53 @@
     50% {
       height: 300px;
       width: 0;
-      border-right: 5px solid $dark-text;
+      border-right: 5px solid $emphasize;
     }
     100% {
       width: 300px;
       height: 300px;
-      border-bottom: 5px solid $dark-text;
-      border-right: 5px solid $dark-text;
+      border-bottom: 5px solid $emphasize;
+      border-right: 5px solid $emphasize;
+    }
+  }
+
+  // section title (about) before and after animations
+  @keyframes section-title-after {
+    0% {
+      height: 0;
+    }
+    50% {
+      height: 140px;
+      width: 0;
+      border-left: 5px solid;
+    }
+    100% {
+      width: 215px;
+      height: 140px;
+      border-top: 5px solid;
+      border-left: 5px solid;
+    }
+  }
+
+  @keyframes section-title-before {
+    0% {
+      height: 0;
+    }
+    50% {
+      height: 140px;
+      width: 0;
+      border-right: 5px solid;
+    }
+    100% {
+      width: 215px;
+      height: 140px;
+      border-bottom: 5px solid;
+      border-right: 5px solid;
     }
   }
 
   //////////////////////////////////////////////
+
   /* HOME STYLING */
   .logo {
     width: 310px;
@@ -419,6 +487,32 @@
     &:hover {
       width: 345px;
       height: 345px;
+    }
+  }
+
+  /* ABOUT */
+  .about {
+    .section-header {
+      .section-title {
+        width: 420px;
+        font-size: 4.5em;
+      }
+    }
+    .about-content {
+      padding: 5em;
+      .intro {
+        font-size: 2.5em;
+      }
+
+      .head {
+        font-size: 1.75em;
+      }
+
+      .links {
+        .about-link {
+          font-size: 1.5em;
+        }
+      }
     }
   }
 

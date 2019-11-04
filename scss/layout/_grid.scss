@@ -26,17 +26,20 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: $home-bg;
+  // background: $home-bg;
+  background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+
   h1 {
-    font-size: 3em;
+    color: $emphasize;
+    font-size: 4em;
     transition: 0.5s all ease-out;
   }
 }
 
 .home {
   height: 100vh;
-  background: $home-bg;
-  // background: $dark-text;
+  // background: $home-bg;
+  background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,7 +50,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: $dark-text;
+  color: $emphasize;
+  // color: $dark-text;
   // color: $primary-text-color;
   font-size: 3em;
   width: 190px;
@@ -226,7 +230,7 @@ body {
       top: -60px;
       left: 0;
     }
-    .back-end-skills {
+    .other-skills {
       bottom: -60px;
       right: 0;
     }
@@ -253,9 +257,9 @@ body {
     height: 100vh;
     transform-origin: bottom;
     transform: scaleY(0);
-    opacity: 0;
+    // opacity: 0;
     background: $dark-text;
-    animation: slide-in-y 1s forwards 1s;
+    animation: slide-in-y-no-fade 1s forwards 1s;
     transition: 1s all ease-out;
     .skill-title {
       justify-self: flex-start;
@@ -266,27 +270,23 @@ body {
     left: 0;
     transform-origin: top;
     transform: scaleY(0);
-    opacity: 0;
+    // opacity: 0;
     height: 100vh;
     width: 50vw;
     background: $purple;
-    animation: slide-in-y 1s forwards;
+    animation: slide-in-y-no-fade 1s forwards;
   }
 
   .bg-two {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-end;
     position: absolute;
     right: 0;
     width: 50vw;
     height: 100vh;
     transform-origin: top;
     transform: scaleY(0);
-    opacity: 0;
+    // opacity: 0;
     background: $purple;
-    animation: slide-in-y 1s forwards 1s;
+    animation: slide-in-y-no-fade 1s forwards 1s;
     transition: 1s all ease-out;
     .skill-title {
       justify-self: flex-start;
@@ -298,18 +298,24 @@ body {
     right: 0;
     transform-origin: bottom;
     transform: scaleY(0);
-    opacity: 0;
+    // opacity: 0;
     height: 100vh;
     width: 50vw;
     background: $dark-text;
-    animation: slide-in-y 1s forwards;
+    animation: slide-in-y-no-fade 1s forwards;
   }
   // variation of the slide-out-y animation but for the skill bg
   .slide-out-y {
     animation: slide-out-y 1s forwards;
   }
 
-  .back-end-content {
+  .slide-out-y-no-fade {
+    // transform-origin: bottom;
+    transform: scaleY(0);
+    animation: slide-out-y-no-fade 0.8s forwards;
+  }
+
+  .other-skills-content {
     position: absolute;
     top: 0;
     left: 0;

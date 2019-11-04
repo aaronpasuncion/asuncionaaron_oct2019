@@ -1,3 +1,4 @@
+// nav button styling
 .nav {
   z-index: 300;
   display: flex;
@@ -5,8 +6,8 @@
   justify-content: center;
   align-items: center;
   position: fixed;
-  right: 30px;
-  top: 30px;
+  right: 2em;
+  top: 1.75em;
   transition: 0.5s all ease-out;
   opacity: 0;
   animation: fade-in 1s forwards 1s;
@@ -15,7 +16,7 @@
     height: 3px;
     width: 1.25em;
     margin-bottom: 0.2em;
-    background: $dark-text;
+    background: $emphasize;
     // background: $primary-text-color;
     transition: 0.5s all ease-out;
   }
@@ -26,13 +27,15 @@
   }
 }
 
+// nav overlay styling
 .nav-overlay {
   z-index: 299;
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
-  background: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+  // background: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+  background: $dark-text;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,9 +69,11 @@
   }
 }
 
+// nav link styling
 .nav-link {
   text-decoration: none;
-  color: $dark-text;
+  // color: $dark-text;
+  color: $primary-text-color;
   font-size: 1.5em;
   font-weight: bold;
   transition: 0.25s all ease-out;
@@ -76,6 +81,11 @@
   cursor: pointer;
   &:hover {
     text-decoration: line-through;
-    color: #ffb199;
+    color: $emphasize;
   }
+}
+
+// animation for nav on load
+.nav-animation {
+  animation: fade-in 0.5s forwards;
 }
