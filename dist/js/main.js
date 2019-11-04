@@ -95,7 +95,7 @@ function loadingScreen() {
     loadingTxt.innerHTML = "WELCOME";
     setTimeout(() => {
       loadingTxt.classList.add("loading-animation");
-    }, 2000);
+    }, 1000);
     setTimeout(() => {
       // loading
       toggleSections(loading);
@@ -103,7 +103,7 @@ function loadingScreen() {
       toggleSections(home);
       // nav
       toggleSections(nav);
-    }, 4000);
+    }, 2000);
   }
 }
 

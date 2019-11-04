@@ -72,6 +72,15 @@
       }
     }
   }
+
+  /* WORK */
+  .project-full {
+    overflow-y: scroll;
+  }
+  .project-preview {
+    width: 100%;
+    height: 20em;
+  }
 }
 @media only screen and (min-width: 768px) {
   /* KEYFRAMES */
@@ -637,12 +646,12 @@
   /* COMPONENTS */
 
   .head {
-    font-size: 2.75em;
+    font-size: 2.25em;
   }
 
   .links {
     .link {
-      font-size: 2.25em;
+      font-size: 2em;
     }
   }
 }

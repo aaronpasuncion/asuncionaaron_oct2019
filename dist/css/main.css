@@ -3,7 +3,7 @@
     font-size: 4em;
     opacity: 1; }
   to {
-    font-size: 6em;
+    font-size: 5em;
     opacity: 0; } }
 
 @keyframes home-load-before {
@@ -585,7 +585,6 @@ body {
     animation: slide-in-y-no-fade 1s forwards 1s;
     transition: 1s all ease-out; }
     .skills .bg-two .skill-title {
-      justify-self: flex-start;
       color: #000; }
   .skills .bg-two-alternate {
     position: absolute;
@@ -606,8 +605,18 @@ body {
     top: 0;
     left: 0;
     height: 100%;
+    width: 100%;
     opacity: 0;
-    animation: fade-in-left 1s forwards 1s; }
+    animation: fade-in-left 1s forwards 1s;
+    color: #f9d423; }
+    .skills .other-skills-content .more-info {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column; }
+      .skills .other-skills-content .more-info ul {
+        padding: 0;
+        margin: 0; }
   .skills .bar-graph {
     position: relative;
     height: 100%;
@@ -642,7 +651,7 @@ body {
           height: 75%;
           animation: slide-in-y 1s forwards 1.6s; }
         .skills .bar-graph .bars .bar:nth-child(5) {
-          height: 60%;
+          height: 75%;
           animation: slide-in-y 1s forwards 1.8s; }
         .skills .bar-graph .bars .bar:nth-child(6) {
           height: 60%;
@@ -674,26 +683,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center; }
-
-/*
-
-TRANSITION OVERLAYS
-
-*/
-.transition-overlay-one {
-  height: 100vh;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(-225deg, #e3fdf5 0%, #ffe6fa 100%);
-  opacity: 0;
-  animation: fade-in-to-out 2s forwards 1s;
-  z-index: 150; }
-  .transition-overlay-one h1 {
-    color: #000; }
 
 .fade-out {
   opacity: 1;
@@ -740,6 +729,9 @@ COMPONENTS
   .link:hover {
     text-decoration: line-through;
     color: #fff; }
+
+.contact .link {
+  pointer-events: none; }
 
 .active {
   z-index: 100; }
@@ -796,6 +788,34 @@ COMPONENTS
   visibility: visible;
   opacity: 1;
   transition: all 0.5s ease-in; }
+
+.personal-skills {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.skill-head {
+  font-size: 2em;
+  color: #f9d423;
+  text-decoration: underline;
+  text-align: center;
+  margin: 0 auto; }
+
+.personal-skill {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5em;
+  color: #f9d423; }
+  .personal-skill .far,
+  .personal-skill .fas {
+    font-size: 3em; }
+
+.p-skill {
+  font-size: 1.25em;
+  font-weight: bold; }
 
 .project-box {
   display: flex;
@@ -934,8 +954,27 @@ COMPONENTS
 
 .project-preview {
   height: 15em;
-  width: 25em;
-  background: #f9d423; }
+  width: 25em; }
+
+.project-1-preview {
+  background: url("../../dist/img/project-1.PNG") no-repeat center;
+  background-size: cover; }
+
+.project-2-preview {
+  background: url("../../dist/img/project-2.PNG") no-repeat center;
+  background-size: cover; }
+
+.project-3-preview {
+  background: url("../../dist/img/project-3.PNG") no-repeat center;
+  background-size: cover; }
+
+.project-4-preview {
+  background: url("../../dist/img/project-4.PNG") no-repeat center;
+  background-size: cover; }
+
+.project-5-preview {
+  background: url("../../dist/img/project-5.PNG") no-repeat center;
+  background-size: cover; }
 
 .fade-out {
   opacity: 1 !important;
@@ -1119,7 +1158,13 @@ COMPONENTS
     width: 100%; }
     .skills .bar-graph .bars .bar {
       width: 20px;
-      margin: 0 0.5em; } }
+      margin: 0 0.5em; }
+  /* WORK */
+  .project-full {
+    overflow-y: scroll; }
+  .project-preview {
+    width: 100%;
+    height: 20em; } }
 
 @media only screen and (min-width: 768px) {
   /* KEYFRAMES */
@@ -1481,6 +1526,6 @@ COMPONENTS
     font-size: 1.25em; }
   /* COMPONENTS */
   .head {
-    font-size: 2.75em; }
+    font-size: 2.25em; }
   .links .link {
-    font-size: 2.25em; } }
+    font-size: 2em; } }
