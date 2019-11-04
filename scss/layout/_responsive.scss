@@ -1,5 +1,77 @@
 /* xtra small devices */
 @media only screen and (max-width: 499px) {
+  /* KEYFRAMES */
+
+  @keyframes skill-box-anim {
+    from {
+      opacity: 0;
+      width: 340px;
+      height: 340px;
+    }
+    to {
+      opacity: 1;
+      width: 310px;
+      height: 310px;
+    }
+  }
+
+  @keyframes skill-box-anim-exit {
+    from {
+      opacity: 1;
+      width: 310px;
+      height: 310px;
+    }
+    to {
+      opacity: 0;
+      width: 340px;
+      height: 340px;
+    }
+  }
+  ///////////////////////////////////////
+  /* BUTTONS */
+  .to-work {
+    right: auto;
+    bottom: -290px;
+    transform: none;
+  }
+
+  .close-section {
+    font-size: 1.5em;
+  }
+
+  .close-project-btn {
+    top: 3.25em;
+  }
+
+  /* NAV */
+  .nav-overlay {
+    .navigation {
+      flex-direction: column;
+    }
+  }
+
+  .nav-link {
+    display: inline-block;
+    margin: 0.75em 0;
+  }
+  /* SKILLS */
+  .skills {
+    .section-title {
+      font-size: 4em;
+    }
+    .skills-title {
+      font-size: 2.5em;
+    }
+    .bar-graph {
+      width: 100%;
+      .bars {
+        .bar {
+          width: 20px;
+          margin: 0 0.5em;
+        }
+      }
+    }
+  }
 }
 @media only screen and (min-width: 768px) {
   /* KEYFRAMES */
@@ -148,6 +220,16 @@
           margin: 0 1.5em;
         }
       }
+    }
+  }
+
+  /* COMPONENTS */
+  .head {
+    font-size: 2em;
+  }
+  .links {
+    .link {
+      font-size: 1.5em;
     }
   }
 }
@@ -314,6 +396,19 @@
 
   .project-full {
     padding: 3em;
+  }
+
+  .project-summary {
+    flex-direction: row;
+  }
+
+  .project-preview {
+    flex: 2;
+    height: 100%;
+    margin: 1em;
+  }
+  .project-info {
+    flex: 1;
   }
 }
 
@@ -503,16 +598,6 @@
       .intro {
         font-size: 2.5em;
       }
-
-      .head {
-        font-size: 1.75em;
-      }
-
-      .links {
-        .about-link {
-          font-size: 1.5em;
-        }
-      }
     }
   }
 
@@ -539,6 +624,25 @@
       .sub-title {
         font-size: 1em;
       }
+    }
+  }
+
+  /* CONTACT */
+  .contact-form {
+    .input {
+      font-size: 1.25em;
+    }
+  }
+
+  /* COMPONENTS */
+
+  .head {
+    font-size: 2.75em;
+  }
+
+  .links {
+    .link {
+      font-size: 2.25em;
     }
   }
 }

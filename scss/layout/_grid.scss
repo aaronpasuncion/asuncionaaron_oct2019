@@ -136,48 +136,6 @@ body {
       opacity: 0;
       animation: fade-in-up 1s forwards 4s;
     }
-    .head {
-      margin: 0;
-      margin-bottom: 1em;
-      font-size: 1.5em;
-      color: $red;
-      position: relative;
-      &::after {
-        position: absolute;
-        content: "";
-        background: $red;
-        height: 3px;
-        width: 80px;
-        bottom: -10px;
-        left: 0;
-      }
-    }
-    .intro {
-      font-size: 2em;
-      span {
-        color: $red;
-      }
-      .emphasize {
-        color: $emphasize;
-      }
-    }
-    .group {
-      margin-top: 1em;
-    }
-
-    .links {
-      margin-bottom: 2em;
-      .about-link {
-        color: $red;
-        font-size: 1.25em;
-        text-decoration: none;
-        transition: 0.5s all ease-out;
-        &:hover {
-          text-decoration: line-through;
-          color: $primary-text-color;
-        }
-      }
-    }
   }
   // transition out classes
   .section-header-slide-out {
@@ -452,6 +410,50 @@ COMPONENTS
 
 */
 
+.head {
+  margin: 0;
+  margin-bottom: 1em;
+  font-size: 1.5em;
+  color: $red;
+  position: relative;
+  &::after {
+    position: absolute;
+    content: "";
+    background: $red;
+    height: 3px;
+    width: 80px;
+    bottom: -10px;
+    left: 0;
+  }
+}
+.intro {
+  font-size: 2em;
+  span {
+    color: $red;
+  }
+  .emphasize {
+    color: $emphasize;
+  }
+}
+.group {
+  margin-top: 1em;
+}
+
+.links {
+  margin-bottom: 2em;
+}
+
+.link {
+  color: $red;
+  font-size: 1.25em;
+  text-decoration: none;
+  transition: 0.5s all ease-out;
+  &:hover {
+    text-decoration: line-through;
+    color: $primary-text-color;
+  }
+}
+
 .active {
   z-index: 100;
 }
@@ -683,6 +685,27 @@ COMPONENTS
   align-items: center;
   opacity: 0;
   animation: fade-in 1s forwards 1s;
+}
+
+.project-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-summary {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 1em;
+}
+
+.project-preview {
+  height: 15em;
+  width: 25em;
+  background: $emphasize;
 }
 
 .fade-out {
