@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "aaron asuncion portfolio october 2019",
   "main": "index.js",
-  "homepeage": "https://aaronpasuncion.github.io/asuncionaaron_oct2019",
+  "homepeage": "https://aaronpasuncion.github.io/asuncionaaron_oct2019/",
   "scripts": {
     "sass": "node-sass -w scss/ -o dist/css --recursive",
     "deploy": "gh-pages -d dist"
