@@ -27,8 +27,13 @@ body {
   justify-content: center;
   align-items: center;
   // background: $home-bg;
-  background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
-
+  background: linear-gradient(to bottom, #323232 0%, #3f3f3f 40%, #1c1c1c 150%),
+    linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0.4) 0%,
+      rgba(0, 0, 0, 0.25) 200%
+    );
+  background-blend-mode: multiply;
   h1 {
     color: $emphasize;
     font-size: 4em;
@@ -39,7 +44,13 @@ body {
 .home {
   height: 100vh;
   // background: $home-bg;
-  background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+  background: linear-gradient(to bottom, #323232 0%, #3f3f3f 40%, #1c1c1c 150%),
+    linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0.4) 0%,
+      rgba(0, 0, 0, 0.25) 200%
+    );
+  background-blend-mode: multiply;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -177,7 +188,7 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    background: $purple;
+    background: $blue;
     box-shadow: 10px 10px 50px 5px $dark-text;
     // width: 410px;
     // height: 375px;
@@ -231,7 +242,7 @@ body {
     // opacity: 0;
     height: 100vh;
     width: 50vw;
-    background: $purple;
+    background: $blue;
     animation: slide-in-y-no-fade 1s forwards;
   }
 
@@ -243,7 +254,7 @@ body {
     transform-origin: top;
     transform: scaleY(0);
     // opacity: 0;
-    background: $purple;
+    background: $blue;
     animation: slide-in-y-no-fade 1s forwards 1s;
     transition: 1s all ease-out;
     .skill-title {
@@ -265,6 +276,10 @@ body {
   .slide-out-y {
     animation: slide-out-y 1s forwards;
   }
+  .slide-out-x {
+    animation: slide-out-x 1s forwards;
+    transform-origin: left;
+  }
 
   .slide-out-y-no-fade {
     // transform-origin: bottom;
@@ -278,6 +293,7 @@ body {
     left: 0;
     height: 100%;
     width: 100%;
+    overflow-y: scroll;
     opacity: 0;
     animation: fade-in-left 1s forwards 1s;
     color: $emphasize;
@@ -293,71 +309,78 @@ body {
     }
   }
 
+  .other-skills-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .intro {
+      color: $primary-text-color;
+    }
+  }
+
   .bar-graph {
     position: relative;
     height: 100%;
     width: 100%;
     .bars {
       display: flex;
+      flex-direction: column;
       justify-content: center;
-      align-items: flex-end;
+      align-items: flex-start;
       position: relative;
-      bottom: 0;
+      left: 0;
       height: 100%;
       .bar {
-        transform-origin: bottom;
-        transform: scaleY(0);
-        background: $emphasize;
+        transform-origin: left;
+        transform: scaleX(0);
+        background: $home-bg;
         position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 25px;
-        margin: 0 1em;
+        height: 25px;
+        margin: 1em 0;
 
         &:nth-child(1) {
-          height: 90%;
-          animation: slide-in-y 1s forwards 1s;
+          width: 90%;
+          animation: slide-in-x 1s forwards 1s;
         }
         &:nth-child(2) {
-          height: 75%;
-          animation: slide-in-y 1s forwards 1.2s;
+          width: 75%;
+          animation: slide-in-x 1s forwards 1.2s;
         }
         &:nth-child(3) {
-          height: 70%;
-          animation: slide-in-y 1s forwards 1.4s;
+          width: 70%;
+          animation: slide-in-x 1s forwards 1.4s;
         }
         &:nth-child(4) {
-          height: 75%;
-          animation: slide-in-y 1s forwards 1.6s;
+          width: 75%;
+          animation: slide-in-x 1s forwards 1.6s;
         }
         &:nth-child(5) {
-          height: 75%;
-          animation: slide-in-y 1s forwards 1.8s;
+          width: 75%;
+          animation: slide-in-x 1s forwards 1.8s;
         }
         &:nth-child(6) {
-          height: 60%;
-          animation: slide-in-y 1s forwards 2s;
+          width: 60%;
+          animation: slide-in-x 1s forwards 2s;
         }
         &:nth-child(7) {
-          height: 65%;
-          animation: slide-in-y 1s forwards 2.2s;
+          width: 65%;
+          animation: slide-in-x 1s forwards 2.2s;
         }
         .bar-title {
           margin: 0;
-
-          -webkit-transform: rotate(-90deg);
-          -ms-transform: rotate(-90deg);
-          transform: rotate(-90deg);
         }
       }
     }
     .baseline {
       position: absolute;
       bottom: 0;
-      height: 5px;
-      background: $emphasize;
-      animation: full-width-animation 1s forwards;
+      width: 5px;
+      background: $home-bg;
+      animation: full-height-animation 1s forwards;
     }
   }
 
@@ -526,7 +549,7 @@ COMPONENTS
 
 .skill-head {
   font-size: 2em;
-  color: $emphasize;
+  color: $primary-text-color;
   text-decoration: underline;
   text-align: center;
   margin: 0 auto;
@@ -538,7 +561,7 @@ COMPONENTS
   justify-content: center;
   align-items: center;
   margin: 0.5em;
-  color: $emphasize;
+  color: $primary-text-color;
   .far,
   .fas {
     font-size: 3em;
@@ -548,6 +571,7 @@ COMPONENTS
 .p-skill {
   font-size: 1.25em;
   font-weight: bold;
+  color: $primary-text-color;
 }
 // project styling
 .project-box {
@@ -608,7 +632,7 @@ COMPONENTS
         right: 0;
         width: 0;
         height: 100%;
-        background-color: $purple;
+        background-color: $blue;
         transform-origin: left;
         transition: width 0.5s ease;
         z-index: -1;
@@ -636,7 +660,7 @@ COMPONENTS
         left: 0;
         width: 0;
         height: 100%;
-        background-color: $purple;
+        background-color: $blue;
         transform-origin: right;
         transition: width 0.5s ease;
         z-index: -1;

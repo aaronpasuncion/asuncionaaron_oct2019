@@ -320,7 +320,7 @@ const toggleSkills = skill => {
       bgOneAlt.classList.add("slide-out-y-no-fade"),
       bgTwoAlt.classList.add("slide-out-y-no-fade"),
       // close the content for the specific skill section
-      skill.id === frontEndSkills.id && barGraph.classList.add("slide-out-y"),
+      skill.id === frontEndSkills.id && barGraph.classList.add("slide-out-x"),
       skill.id === otherSkills.id &&
         otherSkillsContent.classList.add(animation),
       // setTimeout() function to add display none and add the section title animation
@@ -350,13 +350,13 @@ const toggleSkills = skill => {
       bgTwoAlt.classList.add("slide-out-y-no-fade"),
       // hide the otherSkills content
       otherSkill.id === frontEndSkills.id &&
-        (barGraph.classList.add("slide-out-y"),
+        (barGraph.classList.add("slide-out-x"),
         otherSkillsContent.classList.remove(animation),
         otherSkillsContent.classList.remove("display-none")),
       otherSkill.id === otherSkills.id &&
         (otherSkillsContent.classList.add(animation),
         barGraph.classList.remove("display-none"),
-        barGraph.classList.remove("slide-out-y")),
+        barGraph.classList.remove("slide-out-x")),
       // remove the slide out animation of the current active skill content
       skill.classList.remove("slide-out-y"),
       setTimeout(() => {
@@ -380,7 +380,7 @@ const toggleSkills = skill => {
       bgTwoAlt.classList.remove("slide-out-y-no-fade"),
       //display the content for the specific skill section
       skill.id === frontEndSkills.id &&
-        (barGraph.classList.remove("slide-out-y"),
+        (barGraph.classList.remove("slide-out-x"),
         barGraph.classList.remove("display-none")),
       skill.id === otherSkills.id &&
         (otherSkillsContent.classList.remove("display-none"),
