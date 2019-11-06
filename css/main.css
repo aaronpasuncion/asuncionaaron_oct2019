@@ -50,6 +50,32 @@
     border-bottom: 5px solid;
     border-right: 5px solid; } }
 
+@keyframes skills-title-before {
+  0% {
+    height: 0; }
+  50% {
+    height: 125px;
+    width: 0;
+    border-left: 5px solid; }
+  100% {
+    width: 145px;
+    height: 125px;
+    border-top: 5px solid;
+    border-left: 5px solid; } }
+
+@keyframes skills-title-after {
+  0% {
+    height: 0; }
+  50% {
+    height: 125px;
+    width: 0;
+    border-right: 5px solid; }
+  100% {
+    width: 145px;
+    height: 125px;
+    border-bottom: 5px solid;
+    border-right: 5px solid; } }
+
 @keyframes skills-before {
   0% {
     height: 0; }
@@ -511,12 +537,13 @@ body {
     color: #fff;
     text-transform: uppercase;
     width: 0;
-    height: 0;
     padding: 0;
-    font-size: 5em;
-    animation: fade-in-left 1s forwards 1s; }
-    .skills .section-title::before, .skills .section-title::after {
-      animation: none; }
+    font-size: 4em;
+    animation: fade-in 1s forwards 1s; }
+    .skills .section-title::before {
+      animation: skills-title-before 1s forwards 1s; }
+    .skills .section-title::after {
+      animation: skills-title-after 1s forwards 1s; }
   .skills .skills-content {
     z-index: 1;
     display: flex;
@@ -529,27 +556,30 @@ body {
     transition: 1s all ease-out;
     animation: skill-box-anim 1s forwards 2s; }
     .skills .skills-content .front-end-skills {
-      top: -60px;
+      top: -65px;
       left: 0; }
     .skills .skills-content .other-skills {
-      bottom: -60px;
+      bottom: -65px;
       right: 0; }
   .skills .section-header {
     background: #000; }
   .skills .skill-title {
     position: absolute;
     cursor: pointer;
-    font-size: 3.5em;
+    font-size: 2.5em;
     color: #fff;
-    transition: 0.5s all ease-out; }
+    transition: 0.5s all ease-out;
+    padding: 0 0.25em;
+    border: 2px solid #fff; }
     .skills .skill-title:hover {
       text-decoration: line-through;
-      color: #f9d423; }
+      color: #f9d423;
+      border-color: #f9d423; }
   .skills .bg-one {
     position: absolute;
     left: 0;
     width: 50vw;
-    height: 100vh;
+    height: 100%;
     transform-origin: bottom;
     transform: scaleY(0);
     background: #000;
@@ -562,7 +592,7 @@ body {
     left: 0;
     transform-origin: top;
     transform: scaleY(0);
-    height: 100vh;
+    height: 100%;
     width: 50vw;
     background: #3a4750;
     animation: slide-in-y-no-fade 1s forwards; }
@@ -570,7 +600,7 @@ body {
     position: absolute;
     right: 0;
     width: 50vw;
-    height: 100vh;
+    height: 100%;
     transform-origin: top;
     transform: scaleY(0);
     background: #3a4750;
@@ -583,7 +613,7 @@ body {
     right: 0;
     transform-origin: bottom;
     transform: scaleY(0);
-    height: 100vh;
+    height: 100%;
     width: 50vw;
     background: #000;
     animation: slide-in-y-no-fade 1s forwards; }
@@ -673,7 +703,8 @@ body {
       animation: full-height-animation 1s forwards; }
   .skills .skill-selection-active {
     text-decoration: line-through;
-    color: #f9d423; }
+    color: #f9d423;
+    border-color: #f9d423; }
 
 .projects {
   display: flex;
@@ -1031,7 +1062,7 @@ COMPONENTS
   font-size: 0.5em;
   font-weight: bold;
   position: absolute;
-  right: -270px;
+  right: -255px;
   color: #f9d423;
   border: 2px solid #f9d423;
   background: none;
@@ -1177,8 +1208,8 @@ COMPONENTS
     overflow-y: scroll; }
   .project-preview {
     width: 100%;
-    min-height: 15em;
-    margin-top: 10em;
+    min-height: 10em;
+    margin-top: 30em;
     margin-bottom: 2em; } }
 
 @media only screen and (min-width: 768px) {
@@ -1251,7 +1282,7 @@ COMPONENTS
       height: 540px; } }
   /* BUTTONS */
   .to-work {
-    right: -330px;
+    right: -315px;
     font-size: 0.6em; }
   .close-project-btn {
     right: 1em; }
@@ -1426,8 +1457,7 @@ COMPONENTS
     right: -20px;
     font-size: 2em; }
   .to-work {
-    right: -440px;
-    font-size: 0.7em; }
+    right: -435px; }
   .close-section {
     font-size: 3em; }
   /* NAV */
@@ -1449,6 +1479,16 @@ COMPONENTS
     .about .about-content {
       overflow-y: scroll; }
   /* SKILLS */
+  .skills .skills-content .section-title {
+    font-size: 5em; }
+  .skills .skills-content .front-end-skills {
+    top: -80px;
+    left: 0; }
+  .skills .skills-content .other-skills {
+    bottom: -80px;
+    right: 0; }
+  .skills .skill-title {
+    font-size: 3.5em; }
   .skills .bar-graph {
     height: 100%; }
     .skills .bar-graph .bars .bar {
