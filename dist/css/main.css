@@ -276,7 +276,7 @@ FADE ANIMATIONS
     opacity: 0; } }
 
 .loading-animation {
-  animation: fade-out 1s forwards 1s; }
+  animation: fade-in-to-out 2s forwards 1s; }
 
 .slide-out-y {
   transform-origin: bottom;
@@ -403,8 +403,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to bottom, #323232 0%, #3f3f3f 40%, #1c1c1c 150%), linear-gradient(to top, rgba(255, 255, 255, 0.4) 0%, rgba(0, 0, 0, 0.25) 200%);
-  background-blend-mode: multiply; }
+  background: #303841; }
   .loading h1 {
     color: #f9d423;
     font-size: 4em;
@@ -412,8 +411,7 @@ body {
 
 .home {
   height: 100vh;
-  background: linear-gradient(to bottom, #323232 0%, #3f3f3f 40%, #1c1c1c 150%), linear-gradient(to top, rgba(255, 255, 255, 0.4) 0%, rgba(0, 0, 0, 0.25) 200%);
-  background-blend-mode: multiply;
+  background: #303841;
   display: flex;
   justify-content: center;
   align-items: center; }
@@ -472,7 +470,7 @@ body {
     padding: 3em;
     z-index: 1;
     position: relative;
-    background: #ff0844;
+    background: #d72323;
     opacity: 0;
     transform-origin: left;
     transform: scaleX(0);
@@ -525,7 +523,7 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    background: #1b9fcc;
+    background: #303841;
     box-shadow: 10px 10px 50px 5px #000;
     opacity: 0;
     transition: 1s all ease-out;
@@ -566,7 +564,7 @@ body {
     transform: scaleY(0);
     height: 100vh;
     width: 50vw;
-    background: #1b9fcc;
+    background: #3a4750;
     animation: slide-in-y-no-fade 1s forwards; }
   .skills .bg-two {
     position: absolute;
@@ -575,7 +573,7 @@ body {
     height: 100vh;
     transform-origin: top;
     transform: scaleY(0);
-    background: #1b9fcc;
+    background: #3a4750;
     animation: slide-in-y-no-fade 1s forwards 1s;
     transition: 1s all ease-out; }
     .skills .bg-two .skill-title {
@@ -637,7 +635,7 @@ body {
       .skills .bar-graph .bars .bar {
         transform-origin: left;
         transform: scaleX(0);
-        background: linear-gradient(-225deg, #e3fdf5 0%, #ffe6fa 100%);
+        background: #f9d423;
         position: relative;
         display: flex;
         align-items: center;
@@ -671,7 +669,7 @@ body {
       position: absolute;
       bottom: 0;
       width: 5px;
-      background: linear-gradient(-225deg, #e3fdf5 0%, #ffe6fa 100%);
+      background: #f9d423;
       animation: full-height-animation 1s forwards; }
   .skills .skill-selection-active {
     text-decoration: line-through;
@@ -700,12 +698,12 @@ COMPONENTS
   margin: 0;
   margin-bottom: 1em;
   font-size: 1.5em;
-  color: #ff0844;
+  color: #d72323;
   position: relative; }
   .head::after {
     position: absolute;
     content: "";
-    background: #ff0844;
+    background: #d72323;
     height: 3px;
     width: 80px;
     bottom: -10px;
@@ -714,7 +712,7 @@ COMPONENTS
 .intro {
   font-size: 2em; }
   .intro span {
-    color: #ff0844; }
+    color: #d72323; }
   .intro .emphasize {
     color: #f9d423; }
 
@@ -725,7 +723,7 @@ COMPONENTS
   margin-bottom: 2em; }
 
 .link {
-  color: #ff0844;
+  color: #d72323;
   font-size: 1.25em;
   text-decoration: none;
   transition: 0.5s all ease-out; }
@@ -845,7 +843,7 @@ COMPONENTS
       text-decoration: underline;
       color: #fff; }
     .project-box .proj-desc .proj-title {
-      color: #ff0844;
+      color: #d72323;
       font-size: 1.5em;
       font-weight: bold; }
     .project-box .proj-desc .sub-title {
@@ -854,7 +852,7 @@ COMPONENTS
       font-size: 1em; }
   .project-box:nth-child(odd) .proj-img {
     order: 1;
-    background: #ff0844;
+    background: #d72323;
     transform-origin: left;
     opacity: 0;
     transform: scaleX(0); }
@@ -871,13 +869,13 @@ COMPONENTS
       right: 0;
       width: 0;
       height: 100%;
-      background-color: #1b9fcc;
+      background-color: #3a4750;
       transform-origin: left;
       transition: width 0.5s ease;
       z-index: -1; }
   .project-box:nth-child(even) .proj-img {
     order: 2;
-    background: #ff0844;
+    background: #d72323;
     transform-origin: right;
     opacity: 0;
     transform: scaleX(0); }
@@ -894,7 +892,7 @@ COMPONENTS
       left: 0;
       width: 0;
       height: 100%;
-      background-color: #1b9fcc;
+      background-color: #3a4750;
       transform-origin: right;
       transition: width 0.5s ease;
       z-index: -1; }
@@ -961,27 +959,27 @@ COMPONENTS
   width: 25em; }
 
 .project-1-preview {
-  background: url("../../dist/img/project-1.PNG") no-repeat center;
+  background: url("../img/project-1.PNG") no-repeat center;
   background-size: cover; }
 
 .project-2-preview {
-  background: url("../../dist/img/project-2.PNG") no-repeat center;
+  background: url("../img/project-2.PNG") no-repeat center;
   background-size: cover; }
 
 .project-3-preview {
-  background: url("../../dist/img/project-3.PNG") no-repeat center;
+  background: url("../img/project-3.PNG") no-repeat center;
   background-size: cover; }
 
 .project-4-preview {
-  background: url("../../dist/img/project-4.PNG") no-repeat center;
+  background: url("../img/project-4.PNG") no-repeat center;
   background-size: cover; }
 
 .project-5-preview {
-  background: url("../../dist/img/project-5.PNG") no-repeat center;
+  background: url("../img/project-5.PNG") no-repeat center;
   background-size: cover; }
 
 .fade-out {
-  opacity: 1 !important;
+  opacity: 1;
   animation: fade-out 1s forwards !important; }
 
 .contact {
@@ -998,11 +996,11 @@ COMPONENTS
     outline: none;
     background: none;
     border: none;
-    border-bottom: 2px solid #ff0844;
+    border-bottom: 2px solid #d72323;
     color: #fff;
     margin-bottom: 2em; }
   .contact-form .textarea {
-    border: 2px solid #ff0844;
+    border: 2px solid #d72323;
     margin-bottom: 1em; }
 
 .section-nav-btn {
@@ -1016,8 +1014,8 @@ COMPONENTS
   z-index: 9999;
   bottom: -22px;
   align-self: flex-end;
-  background: #ff0844;
-  border: 2px solid #ff0844;
+  background: #d72323;
+  border: 2px solid #d72323;
   box-shadow: 5px 3px 20px 1px #000;
   color: #fff;
   padding: 0.1em 0.4em;
@@ -1047,14 +1045,14 @@ COMPONENTS
 .form-btn {
   border: none;
   background: none;
-  border: 2px solid #ff0844;
+  border: 2px solid #d72323;
   color: #fff;
   padding: 0.5em 1em;
   cursor: pointer;
   transition: 0.5s all ease-out;
   font-size: 1em; }
   .form-btn:hover {
-    background: #ff0844; }
+    background: #d72323; }
   .form-btn:active {
     border: none; }
 
@@ -1147,9 +1145,20 @@ COMPONENTS
     font-size: 1.5em; }
   .close-project-btn {
     top: 3.25em; }
+  /* LOGO */
+  .logo {
+    font-size: 2.5em; }
+    .logo:hover {
+      font-size: 2.75em; }
   /* NAV */
   .nav-overlay .navigation {
     flex-direction: column; }
+    .nav-overlay .navigation li:nth-child(1), .nav-overlay .navigation li:nth-child(2), .nav-overlay .navigation li:nth-child(3), .nav-overlay .navigation li:nth-child(4), .nav-overlay .navigation li:nth-child(5) {
+      animation: fade-in 1s forwards 1s;
+      margin-top: 1em; }
+  /* ABOUT */
+  .about .section-header .section-title {
+    font-size: 2em; }
   .nav-link {
     display: inline-block;
     margin: 0.75em 0; }
@@ -1168,7 +1177,9 @@ COMPONENTS
     overflow-y: scroll; }
   .project-preview {
     width: 100%;
-    height: 20em; } }
+    min-height: 15em;
+    margin-top: 10em;
+    margin-bottom: 2em; } }
 
 @media only screen and (min-width: 768px) {
   /* KEYFRAMES */

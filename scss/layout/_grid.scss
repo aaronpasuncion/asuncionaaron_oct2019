@@ -27,13 +27,7 @@ body {
   justify-content: center;
   align-items: center;
   // background: $home-bg;
-  background: linear-gradient(to bottom, #323232 0%, #3f3f3f 40%, #1c1c1c 150%),
-    linear-gradient(
-      to top,
-      rgba(255, 255, 255, 0.4) 0%,
-      rgba(0, 0, 0, 0.25) 200%
-    );
-  background-blend-mode: multiply;
+  background: $primary-background;
   h1 {
     color: $emphasize;
     font-size: 4em;
@@ -44,13 +38,7 @@ body {
 .home {
   height: 100vh;
   // background: $home-bg;
-  background: linear-gradient(to bottom, #323232 0%, #3f3f3f 40%, #1c1c1c 150%),
-    linear-gradient(
-      to top,
-      rgba(255, 255, 255, 0.4) 0%,
-      rgba(0, 0, 0, 0.25) 200%
-    );
-  background-blend-mode: multiply;
+  background: $primary-background;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -188,7 +176,7 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    background: $blue;
+    background: $primary-background;
     box-shadow: 10px 10px 50px 5px $dark-text;
     // width: 410px;
     // height: 375px;
@@ -242,7 +230,7 @@ body {
     // opacity: 0;
     height: 100vh;
     width: 50vw;
-    background: $blue;
+    background: $secondary-background;
     animation: slide-in-y-no-fade 1s forwards;
   }
 
@@ -254,7 +242,7 @@ body {
     transform-origin: top;
     transform: scaleY(0);
     // opacity: 0;
-    background: $blue;
+    background: $secondary-background;
     animation: slide-in-y-no-fade 1s forwards 1s;
     transition: 1s all ease-out;
     .skill-title {
@@ -334,7 +322,7 @@ body {
       .bar {
         transform-origin: left;
         transform: scaleX(0);
-        background: $home-bg;
+        background: $emphasize;
         position: relative;
         display: flex;
         align-items: center;
@@ -379,7 +367,7 @@ body {
       position: absolute;
       bottom: 0;
       width: 5px;
-      background: $home-bg;
+      background: $emphasize;
       animation: full-height-animation 1s forwards;
     }
   }
@@ -632,7 +620,7 @@ COMPONENTS
         right: 0;
         width: 0;
         height: 100%;
-        background-color: $blue;
+        background-color: $secondary-background;
         transform-origin: left;
         transition: width 0.5s ease;
         z-index: -1;
@@ -660,7 +648,7 @@ COMPONENTS
         left: 0;
         width: 0;
         height: 100%;
-        background-color: $blue;
+        background-color: $secondary-background;
         transform-origin: right;
         transition: width 0.5s ease;
         z-index: -1;
@@ -760,27 +748,27 @@ COMPONENTS
 }
 
 .project-1-preview {
-  background: url("../../dist/img/project-1.PNG") no-repeat center;
+  background: url("../img/project-1.PNG") no-repeat center;
   background-size: cover;
 }
 .project-2-preview {
-  background: url("../../dist/img/project-2.PNG") no-repeat center;
+  background: url("../img/project-2.PNG") no-repeat center;
   background-size: cover;
 }
 .project-3-preview {
-  background: url("../../dist/img/project-3.PNG") no-repeat center;
+  background: url("../img/project-3.PNG") no-repeat center;
   background-size: cover;
 }
 .project-4-preview {
-  background: url("../../dist/img/project-4.PNG") no-repeat center;
+  background: url("../img/project-4.PNG") no-repeat center;
   background-size: cover;
 }
 .project-5-preview {
-  background: url("../../dist/img/project-5.PNG") no-repeat center;
+  background: url("../img/project-5.PNG") no-repeat center;
   background-size: cover;
 }
 
 .fade-out {
-  opacity: 1 !important;
+  opacity: 1;
   animation: fade-out 1s forwards !important;
 }

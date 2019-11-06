@@ -91,11 +91,8 @@ function loadingScreen() {
         }, 1000)
       : (loadingTxt.style.opacity = 1);
   } else {
-    loadingTxt.style.opacity = 1;
     loadingTxt.innerHTML = "WELCOME";
-    setTimeout(() => {
-      loadingTxt.classList.add("loading-animation");
-    }, 1000);
+    loadingTxt.classList.add("loading-animation");
     setTimeout(() => {
       // loading
       toggleSections(loading);
@@ -103,7 +100,7 @@ function loadingScreen() {
       toggleSections(home);
       // nav
       toggleSections(nav);
-    }, 2000);
+    }, 4000);
   }
 }
 
@@ -233,8 +230,6 @@ FUNCTIONS
 // toggleSections - toggles the section to be opened and at the same time hiding
 // the previous section if applicable
 const toggleSections = section => {
-  // set the previous and current sections
-  console.log(prevSection);
   // remove the previous section active class
   sectionsArray.forEach(item => {
     item.classList.contains("active") &&
@@ -313,9 +308,8 @@ const toggleSkills = skill => {
   */
   skill.classList.contains("skill-selection-active")
     ? //  remove the class and hide everything else
-      (console.log("option 1"),
       // remove the active selection class
-      skill.classList.remove("skill-selection-active"),
+      (skill.classList.remove("skill-selection-active"),
       // animate the backgrounds
       bgOneAlt.classList.add("slide-out-y-no-fade"),
       bgTwoAlt.classList.add("slide-out-y-no-fade"),
@@ -340,9 +334,8 @@ const toggleSkills = skill => {
      the current skills styling and animations 
      */
     otherSkill.classList.contains("skill-selection-active")
-    ? (console.log("option 2"),
-      // remove the other skill section title active class
-      otherSkill.classList.remove("skill-selection-active"),
+    ? // remove the other skill section title active class
+      (otherSkill.classList.remove("skill-selection-active"),
       // add the active skill class to the currently selected section
       skill.classList.add("skill-selection-active"),
       // animate the backgrounds to swap colours
@@ -370,9 +363,8 @@ const toggleSkills = skill => {
      OPTION 3:
      ELSE if neither is valid just add the animations to the clicked skill section
       */
-      (console.log("option 3"),
       // add the active skill selection class to the selected skill
-      skill.classList.add("skill-selection-active"),
+      (skill.classList.add("skill-selection-active"),
       //animate the backgrounds to alternate the colours
       bgOneAlt.classList.remove("display-none"),
       bgTwoAlt.classList.remove("display-none"),
@@ -417,7 +409,7 @@ const projectSlideOut = () => {
   // remove the styling after the animation is completed
   setTimeout(() => {
     for (var i = 0; i < projectBox.length; i++) {
-      // projectBox[i].classList.remove("disabled");
+      projectBox[i].classList.remove("disabled");
       projectImg[i].style.animation = "";
       projectDesc[i].style.animation = "";
       projectImg[i].style.transform = "scaleY(0)";
@@ -443,7 +435,6 @@ const projectDetailsShow = projectNum => {
 };
 // projectDetailsHide - function to hide the currently active project box
 const projectDetailsHide = () => {
-  console.log(activeProject);
   projectFull[activeProject].classList.add("fade-out");
   closeProject.classList.add("fade-out");
   setTimeout(() => {
@@ -514,15 +505,14 @@ const sectionClose = () => {
         toWork.classList.remove("fade-out");
       }, 2250))
     : /* WORK SECTION CLOSE */
-    workSection.classList.contains("active")
-    ? (projectSlideOut(),
+      workSection.classList.contains("active") &&
+      (projectSlideOut(),
       workSection.classList.remove("active"),
       setTimeout(() => {
         // hide the section and remove active status
         workSection.classList.add("display-none");
         workSection.classList.add("hide");
-      }, 3250))
-    : console.log(null);
+      }, 3250));
 
   // hide the 'close section' button
   closeSection.classList.remove("visible");

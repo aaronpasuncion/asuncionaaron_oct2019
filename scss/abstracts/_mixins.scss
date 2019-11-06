@@ -383,7 +383,7 @@ FADE ANIMATIONS
 
 // animation classes
 .loading-animation {
-  animation: fade-out 1s forwards 1s;
+  animation: fade-in-to-out 2s forwards 1s;
 }
 .slide-out-y {
   transform-origin: bottom;
