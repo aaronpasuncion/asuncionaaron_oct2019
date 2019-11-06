@@ -155,18 +155,20 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
   .section-title {
     position: absolute;
     color: $primary-text-color;
     text-transform: uppercase;
     width: 0;
-    height: 0;
     padding: 0;
-    font-size: 5em;
-    animation: fade-in-left 1s forwards 1s;
-    &::before,
+    font-size: 4em;
+    animation: fade-in 1s forwards 1s;
+    &::before {
+      animation: skills-title-before 1s forwards 1s;
+    }
     &::after {
-      animation: none;
+      animation: skills-title-after 1s forwards 1s;
     }
   }
 
@@ -178,17 +180,15 @@ body {
     position: relative;
     background: $primary-background;
     box-shadow: 10px 10px 50px 5px $dark-text;
-    // width: 410px;
-    // height: 375px;
     opacity: 0;
     transition: 1s all ease-out;
     animation: skill-box-anim 1s forwards 2s;
     .front-end-skills {
-      top: -60px;
+      top: -65px;
       left: 0;
     }
     .other-skills {
-      bottom: -60px;
+      bottom: -65px;
       right: 0;
     }
   }
@@ -199,19 +199,22 @@ body {
   .skill-title {
     position: absolute;
     cursor: pointer;
-    font-size: 3.5em;
+    font-size: 2.5em;
     color: $primary-text-color;
     transition: 0.5s all ease-out;
+    padding: 0 0.25em;
+    border: 2px solid $primary-text-color;
     &:hover {
       text-decoration: line-through;
       color: $emphasize;
+      border-color: $emphasize;
     }
   }
   .bg-one {
     position: absolute;
     left: 0;
     width: 50vw;
-    height: 100vh;
+    height: 100%;
     transform-origin: bottom;
     transform: scaleY(0);
     // opacity: 0;
@@ -228,7 +231,7 @@ body {
     transform-origin: top;
     transform: scaleY(0);
     // opacity: 0;
-    height: 100vh;
+    height: 100%;
     width: 50vw;
     background: $secondary-background;
     animation: slide-in-y-no-fade 1s forwards;
@@ -238,7 +241,7 @@ body {
     position: absolute;
     right: 0;
     width: 50vw;
-    height: 100vh;
+    height: 100%;
     transform-origin: top;
     transform: scaleY(0);
     // opacity: 0;
@@ -255,7 +258,7 @@ body {
     transform-origin: bottom;
     transform: scaleY(0);
     // opacity: 0;
-    height: 100vh;
+    height: 100%;
     width: 50vw;
     background: $dark-text;
     animation: slide-in-y-no-fade 1s forwards;
@@ -377,6 +380,7 @@ body {
   .skill-selection-active {
     text-decoration: line-through;
     color: $emphasize;
+    border-color: $emphasize;
   }
 }
 
@@ -500,7 +504,6 @@ COMPONENTS
   top: 0;
   left: 0;
   height: 100%;
-  // max-height: 100%;
   width: 100%;
   color: $dark-text;
   overflow-y: scroll;

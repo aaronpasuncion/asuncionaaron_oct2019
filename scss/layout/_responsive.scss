@@ -106,8 +106,8 @@
   }
   .project-preview {
     width: 100%;
-    min-height: 15em;
-    margin-top: 10em;
+    min-height: 10em;
+    margin-top: 30em;
     margin-bottom: 2em;
   }
 }
@@ -212,7 +212,7 @@
 
   /* BUTTONS */
   .to-work {
-    right: -330px;
+    right: -315px;
     font-size: 0.6em;
   }
 
@@ -487,8 +487,7 @@
   }
 
   .to-work {
-    right: -440px;
-    font-size: 0.7em;
+    right: -435px;
   }
 
   .close-section {
@@ -528,6 +527,22 @@
 
   /* SKILLS */
   .skills {
+    .skills-content {
+      .section-title {
+        font-size: 5em;
+      }
+      .front-end-skills {
+        top: -80px;
+        left: 0;
+      }
+      .other-skills {
+        bottom: -80px;
+        right: 0;
+      }
+    }
+    .skill-title {
+      font-size: 3.5em;
+    }
     .bar-graph {
       height: 100%;
       .bars {

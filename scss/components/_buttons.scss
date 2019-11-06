@@ -30,7 +30,7 @@
   font-size: 0.5em;
   font-weight: bold;
   position: absolute;
-  right: -270px;
+  right: -255px;
   color: $emphasize;
   border: 2px solid $emphasize;
   background: none;
@@ -40,7 +40,6 @@
 
   &:hover {
     background: $emphasize;
-    // border: 2px solid $emphasize;
     color: $dark-text;
   }
 }

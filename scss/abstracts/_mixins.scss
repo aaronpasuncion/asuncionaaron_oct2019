@@ -73,6 +73,40 @@
   }
 }
 
+@keyframes skills-title-before {
+  0% {
+    height: 0;
+  }
+  50% {
+    height: 125px;
+    width: 0;
+    border-left: 5px solid;
+  }
+  100% {
+    width: 145px;
+    height: 125px;
+    border-top: 5px solid;
+    border-left: 5px solid;
+  }
+}
+
+@keyframes skills-title-after {
+  0% {
+    height: 0;
+  }
+  50% {
+    height: 125px;
+    width: 0;
+    border-right: 5px solid;
+  }
+  100% {
+    width: 145px;
+    height: 125px;
+    border-bottom: 5px solid;
+    border-right: 5px solid;
+  }
+}
+
 @keyframes skills-before {
   0% {
     height: 0;
