@@ -1,39 +1,6 @@
 /* xtra small devices */
 @media only screen and (max-width: 499px) {
-  /* KEYFRAMES */
-
-  @keyframes skill-box-anim {
-    from {
-      opacity: 0;
-      width: 340px;
-      height: 340px;
-    }
-    to {
-      opacity: 1;
-      width: 310px;
-      height: 310px;
-    }
-  }
-
-  @keyframes skill-box-anim-exit {
-    from {
-      opacity: 1;
-      width: 310px;
-      height: 310px;
-    }
-    to {
-      opacity: 0;
-      width: 340px;
-      height: 340px;
-    }
-  }
-  ///////////////////////////////////////
   /* BUTTONS */
-  .to-work {
-    right: auto;
-    bottom: -290px;
-    transform: none;
-  }
 
   .close-section {
     font-size: 1.5em;
@@ -80,24 +47,6 @@
   .nav-link {
     display: inline-block;
     margin: 0.75em 0;
-  }
-  /* SKILLS */
-  .skills {
-    .section-title {
-      font-size: 4em;
-    }
-    .skills-title {
-      font-size: 2.5em;
-    }
-    .bar-graph {
-      width: 100%;
-      .bars {
-        .bar {
-          height: 20px;
-          margin: 0.5em 0;
-        }
-      }
-    }
   }
 
   /* WORK */
@@ -182,39 +131,9 @@
     }
   }
 
-  @keyframes skill-box-anim {
-    from {
-      opacity: 0;
-      width: 540px;
-      height: 540px;
-    }
-    to {
-      opacity: 1;
-      width: 510px;
-      height: 510px;
-    }
-  }
-
-  @keyframes skill-box-anim-exit {
-    from {
-      opacity: 1;
-      width: 510px;
-      height: 510px;
-    }
-    to {
-      opacity: 0;
-      width: 540px;
-      height: 540px;
-    }
-  }
-
   ///////////////////////////////////////////////////
 
   /* BUTTONS */
-  .to-work {
-    right: -315px;
-    font-size: 0.6em;
-  }
 
   .close-project-btn {
     right: 1em;
@@ -244,19 +163,6 @@
       .section-title {
         font-size: 3.5em;
         width: 335px;
-      }
-    }
-  }
-
-  /* SKILLS */
-  .skills {
-    .bar-graph {
-      height: 100%;
-      .bars {
-        .bar {
-          height: 30px;
-          margin: 1.5em 0;
-        }
       }
     }
   }
@@ -451,43 +357,13 @@
 }
 
 @media only screen and (min-width: 1025px) {
-  /* KEYFRAMES */
-  @keyframes skill-box-anim {
-    from {
-      opacity: 0;
-      width: 740px;
-      height: 740px;
-    }
-    to {
-      opacity: 1;
-      width: 710px;
-      height: 710px;
-    }
-  }
-
-  @keyframes skill-box-anim-exit {
-    from {
-      opacity: 1;
-      width: 710px;
-      height: 710px;
-    }
-    to {
-      opacity: 0;
-      width: 740px;
-      height: 740px;
-    }
-  }
-  ////////////////////////////////////////
   /* BUTTONS */
-  .to-skills {
+
+  .to-work {
     align-self: center;
     bottom: auto;
     right: -20px;
     font-size: 2em;
-  }
-
-  .to-work {
-    right: -435px;
   }
 
   .close-section {
@@ -522,39 +398,6 @@
 
     .about-content {
       overflow-y: scroll;
-    }
-  }
-
-  /* SKILLS */
-  .skills {
-    .skills-content {
-      .section-title {
-        font-size: 5em;
-      }
-      .front-end-skills {
-        top: -80px;
-        left: 0;
-      }
-      .other-skills {
-        bottom: -80px;
-        right: 0;
-      }
-    }
-    .skill-title {
-      font-size: 3.5em;
-    }
-    .bar-graph {
-      height: 100%;
-      .bars {
-        .bar {
-          height: 40px;
-          margin: 1.5em 0;
-        }
-      }
-    }
-    .other-skills-wrapper {
-      height: 100%;
-      padding: 2em;
     }
   }
 }
@@ -669,14 +512,12 @@
     .proj-desc {
       height: 50%;
       width: 100%;
-      .proj-num {
-        font-size: 1.25em;
-      }
-      .proj-title {
+      .proj-num,
+      .sub-title {
         font-size: 1.5em;
       }
-      .sub-title {
-        font-size: 1em;
+      .proj-title {
+        font-size: 1.25em;
       }
     }
   }
@@ -706,15 +547,7 @@
     }
   }
 
-  .skill-head {
-    font-size: 2.25em;
-  }
-
   .intro {
     font-size: 2.5em;
-  }
-
-  .personal-skill {
-    font-size: 1.25em;
   }
 }

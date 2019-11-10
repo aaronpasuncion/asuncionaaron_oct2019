@@ -73,100 +73,6 @@
   }
 }
 
-@keyframes skills-title-before {
-  0% {
-    height: 0;
-  }
-  50% {
-    height: 125px;
-    width: 0;
-    border-left: 5px solid;
-  }
-  100% {
-    width: 145px;
-    height: 125px;
-    border-top: 5px solid;
-    border-left: 5px solid;
-  }
-}
-
-@keyframes skills-title-after {
-  0% {
-    height: 0;
-  }
-  50% {
-    height: 125px;
-    width: 0;
-    border-right: 5px solid;
-  }
-  100% {
-    width: 145px;
-    height: 125px;
-    border-bottom: 5px solid;
-    border-right: 5px solid;
-  }
-}
-
-@keyframes skills-before {
-  0% {
-    height: 0;
-  }
-  50% {
-    height: 400px;
-    width: 0;
-    border-left: 5px solid $emphasize;
-  }
-  100% {
-    width: 400px;
-    height: 400px;
-    border-top: 5px solid $emphasize;
-    border-left: 5px solid $emphasize;
-  }
-}
-
-@keyframes skills-after {
-  0% {
-    height: 0;
-  }
-  50% {
-    height: 400px;
-    width: 0;
-    border-right: 5px solid $dark-text;
-  }
-  100% {
-    width: 400px;
-    height: 400px;
-    border-bottom: 5px solid $dark-text;
-    border-right: 5px solid $dark-text;
-  }
-}
-
-@keyframes skill-box-anim {
-  from {
-    opacity: 0;
-    width: 440px;
-    height: 440px;
-  }
-  to {
-    opacity: 1;
-    width: 410px;
-    height: 410px;
-  }
-}
-
-@keyframes skill-box-anim-exit {
-  from {
-    opacity: 1;
-    width: 410px;
-    height: 410px;
-  }
-  to {
-    opacity: 0;
-    width: 440px;
-    height: 440px;
-  }
-}
-
 /* PROJECTS */
 @keyframes project-box-slide-in {
   from {
@@ -448,10 +354,6 @@ FADE ANIMATIONS
 
 .animation-none {
   animation: none;
-}
-
-.skill-box-anim-exit {
-  animation: skill-box-anim-exit 0.5s forwards !important;
 }
 
 .project-box-slide-out {

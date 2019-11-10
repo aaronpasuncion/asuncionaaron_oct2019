@@ -149,241 +149,6 @@ body {
   }
 }
 
-// skills
-.skills {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-
-  .section-title {
-    position: absolute;
-    color: $primary-text-color;
-    text-transform: uppercase;
-    width: 0;
-    padding: 0;
-    font-size: 4em;
-    animation: fade-in 1s forwards 1s;
-    &::before {
-      animation: skills-title-before 1s forwards 1s;
-    }
-    &::after {
-      animation: skills-title-after 1s forwards 1s;
-    }
-  }
-
-  .skills-content {
-    z-index: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    background: $primary-background;
-    box-shadow: 10px 10px 50px 5px $dark-text;
-    opacity: 0;
-    transition: 1s all ease-out;
-    animation: skill-box-anim 1s forwards 2s;
-    .front-end-skills {
-      top: -65px;
-      left: 0;
-    }
-    .other-skills {
-      bottom: -65px;
-      right: 0;
-    }
-  }
-  .section-header {
-    background: $dark-text;
-  }
-
-  .skill-title {
-    position: absolute;
-    cursor: pointer;
-    font-size: 2.5em;
-    color: $primary-text-color;
-    transition: 0.5s all ease-out;
-    padding: 0 0.25em;
-    border: 2px solid $primary-text-color;
-    &:hover {
-      text-decoration: line-through;
-      color: $emphasize;
-      border-color: $emphasize;
-    }
-  }
-  .bg-one {
-    position: absolute;
-    left: 0;
-    width: 50vw;
-    height: 100%;
-    transform-origin: bottom;
-    transform: scaleY(0);
-    // opacity: 0;
-    background: $dark-text;
-    animation: slide-in-y-no-fade 1s forwards 1s;
-    transition: 1s all ease-out;
-    .skill-title {
-      justify-self: flex-start;
-    }
-  }
-  .bg-one-alternate {
-    position: absolute;
-    left: 0;
-    transform-origin: top;
-    transform: scaleY(0);
-    // opacity: 0;
-    height: 100%;
-    width: 50vw;
-    background: $secondary-background;
-    animation: slide-in-y-no-fade 1s forwards;
-  }
-
-  .bg-two {
-    position: absolute;
-    right: 0;
-    width: 50vw;
-    height: 100%;
-    transform-origin: top;
-    transform: scaleY(0);
-    // opacity: 0;
-    background: $secondary-background;
-    animation: slide-in-y-no-fade 1s forwards 1s;
-    transition: 1s all ease-out;
-    .skill-title {
-      color: $dark-text;
-    }
-  }
-  .bg-two-alternate {
-    position: absolute;
-    right: 0;
-    transform-origin: bottom;
-    transform: scaleY(0);
-    // opacity: 0;
-    height: 100%;
-    width: 50vw;
-    background: $dark-text;
-    animation: slide-in-y-no-fade 1s forwards;
-  }
-  // variation of the slide-out-y animation but for the skill bg
-  .slide-out-y {
-    animation: slide-out-y 1s forwards;
-  }
-  .slide-out-x {
-    animation: slide-out-x 1s forwards;
-    transform-origin: left;
-  }
-
-  .slide-out-y-no-fade {
-    // transform-origin: bottom;
-    transform: scaleY(0);
-    animation: slide-out-y-no-fade 0.8s forwards;
-  }
-
-  .other-skills-content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    overflow-y: scroll;
-    opacity: 0;
-    animation: fade-in-left 1s forwards 1s;
-    color: $emphasize;
-    .more-info {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      ul {
-        padding: 0;
-        margin: 0;
-      }
-    }
-  }
-
-  .other-skills-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    .intro {
-      color: $primary-text-color;
-    }
-  }
-
-  .bar-graph {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    .bars {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      position: relative;
-      left: 0;
-      height: 100%;
-      .bar {
-        transform-origin: left;
-        transform: scaleX(0);
-        background: $emphasize;
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 25px;
-        margin: 1em 0;
-
-        &:nth-child(1) {
-          width: 90%;
-          animation: slide-in-x 1s forwards 1s;
-        }
-        &:nth-child(2) {
-          width: 75%;
-          animation: slide-in-x 1s forwards 1.2s;
-        }
-        &:nth-child(3) {
-          width: 70%;
-          animation: slide-in-x 1s forwards 1.4s;
-        }
-        &:nth-child(4) {
-          width: 75%;
-          animation: slide-in-x 1s forwards 1.6s;
-        }
-        &:nth-child(5) {
-          width: 75%;
-          animation: slide-in-x 1s forwards 1.8s;
-        }
-        &:nth-child(6) {
-          width: 60%;
-          animation: slide-in-x 1s forwards 2s;
-        }
-        &:nth-child(7) {
-          width: 65%;
-          animation: slide-in-x 1s forwards 2.2s;
-        }
-        .bar-title {
-          margin: 0;
-        }
-      }
-    }
-    .baseline {
-      position: absolute;
-      bottom: 0;
-      width: 5px;
-      background: $emphasize;
-      animation: full-height-animation 1s forwards;
-    }
-  }
-
-  // section content components
-
-  .skill-selection-active {
-    text-decoration: line-through;
-    color: $emphasize;
-    border-color: $emphasize;
-  }
-}
-
 // work
 .work {
 }
@@ -530,40 +295,6 @@ COMPONENTS
   transition: all 0.5s ease-in;
 }
 
-// skills
-.personal-skills {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.skill-head {
-  font-size: 2em;
-  color: $primary-text-color;
-  text-decoration: underline;
-  text-align: center;
-  margin: 0 auto;
-}
-
-.personal-skill {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0.5em;
-  color: $primary-text-color;
-  .far,
-  .fas {
-    font-size: 3em;
-  }
-}
-
-.p-skill {
-  font-size: 1.25em;
-  font-weight: bold;
-  color: $primary-text-color;
-}
 // project styling
 .project-box {
   display: flex;
@@ -571,6 +302,7 @@ COMPONENTS
   height: 250px;
   cursor: pointer;
   transition: 1s all ease-out;
+
   .proj-img {
     width: 50%;
     height: 250px;
@@ -585,6 +317,12 @@ COMPONENTS
     flex-direction: column;
     padding: 1em;
     transition: 0.5s all ease-out;
+
+    .proj-num,
+    .proj-title,
+    .sub-title {
+      transition: 0.5s all ease-out;
+    }
 
     .proj-num {
       font-size: 1.25em;
@@ -605,14 +343,14 @@ COMPONENTS
   &:nth-child(odd) {
     .proj-img {
       order: 1;
-      background: $red;
+      background: $dark-text;
       transform-origin: left;
       opacity: 0;
       transform: scaleX(0);
     }
     .proj-desc {
       order: 2;
-      background: $dark-text;
+      background: $primary-background;
       transform-origin: right;
       opacity: 0;
       transform: scaleX(0);
@@ -623,7 +361,7 @@ COMPONENTS
         right: 0;
         width: 0;
         height: 100%;
-        background-color: $secondary-background;
+        background-color: $emphasize;
         transform-origin: left;
         transition: width 0.5s ease;
         z-index: -1;
@@ -633,14 +371,14 @@ COMPONENTS
   &:nth-child(even) {
     .proj-img {
       order: 2;
-      background: $red;
+      background: $dark-text;
       transform-origin: right;
       opacity: 0;
       transform: scaleX(0);
     }
     .proj-desc {
       order: 1;
-      background: $dark-text;
+      background: $primary-background;
       transform-origin: left;
       opacity: 0;
       transform: scaleX(0);
@@ -651,7 +389,7 @@ COMPONENTS
         left: 0;
         width: 0;
         height: 100%;
-        background-color: $secondary-background;
+        background-color: $emphasize;
         transform-origin: right;
         transition: width 0.5s ease;
         z-index: -1;
@@ -662,6 +400,11 @@ COMPONENTS
     .proj-desc {
       &::after {
         width: 100%;
+      }
+      .proj-num,
+      .sub-title,
+      .proj-title {
+        color: $dark-text;
       }
     }
     .proj-img {

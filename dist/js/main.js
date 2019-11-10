@@ -10,17 +10,15 @@ var logoClick = document.getElementById("logo-click");
 var home = document.getElementById("home");
 var nav = document.getElementById("open-nav");
 var aboutSection = document.getElementById("about");
-var skillsSection = document.getElementById("skills");
 var workSection = document.getElementById("work");
 var contactSection = document.getElementById("contact");
 var sectionClass = document.getElementsByClassName("section");
-var sectionsArray = [aboutSection, skillsSection, workSection];
+var sectionsArray = [aboutSection, workSection];
 // global section variable to hold previously active section
 var prevSection = null;
 /* CLOSE SECTION */
 var closeSection = document.getElementById("close-section");
 /* NAV BUTTONS */
-var toSkills = document.getElementById("to-skills");
 var toWork = document.getElementById("to-work");
 var navOverlay = document.getElementById("overlay");
 var navMenu = document.getElementById("nav-menu");
@@ -30,21 +28,9 @@ var navLinks = document.querySelectorAll(".nav-link");
 var aboutHeader = document.querySelector("#about > .section-header");
 var aboutContent = document.querySelector("#about > .about-content");
 var aboutTitle = document.querySelector(
-  " #about > .section-header > .section-title, .to-skills"
+  " #about > .section-header > .section-title, .to-work"
 );
 var aboutWrapper = document.querySelector(".about-wrapper");
-/* SKILL SECTION */
-var skillsTitle = document.getElementById("skills-section-title");
-var frontEndSkills = document.getElementById("front-end-skills");
-var otherSkills = document.getElementById("other-skills");
-var skillsContent = document.querySelector(".skills-content");
-var bgOne = document.getElementById("bg-one");
-var bgTwo = document.getElementById("bg-two");
-var bgOneAlt = document.getElementById("bg-one-alternate");
-var bgTwoAlt = document.getElementById("bg-two-alternate");
-var barGraph = document.getElementById("bar-graph");
-var bar = document.getElementsByClassName("bar");
-var otherSkillsContent = document.getElementById("other-skills-content");
 /* WORK SECTION */
 var projectBox = document.getElementsByClassName("project-box");
 var projectsContainer = document.querySelector(".projects");
@@ -111,20 +97,6 @@ logoClick.addEventListener("click", () => {
   toggleSections(aboutSection);
 });
 
-// skills section
-
-toSkills.addEventListener("click", () => {
-  toggleSections(skillsSection);
-});
-
-frontEndSkills.addEventListener("click", () => {
-  toggleSkills(frontEndSkills);
-});
-
-otherSkills.addEventListener("click", () => {
-  toggleSkills(otherSkills);
-});
-
 // work section
 toWork.addEventListener("click", () => {
   toggleSections(workSection);
@@ -153,14 +125,6 @@ navLinks.forEach(item => {
           navMenu.classList.add("display-none"),
           navMenu.classList.remove("flex"))
         : (toggleSections(aboutSection), (hideMenu = true))
-      : //skills section navigation
-      clickedLink === "skills"
-      ? skillsSection.classList.contains("active")
-        ? (navOverlay.classList.add("hide"),
-          navOverlay.classList.remove("visible"),
-          navMenu.classList.add("display-none"),
-          navMenu.classList.remove("flex"))
-        : (toggleSections(skillsSection), (hideMenu = true))
       : //work section navigation
       clickedLink === "work"
       ? workSection.classList.contains("active")
@@ -247,11 +211,7 @@ const toggleSections = section => {
   // about section unique styling
   section.id.toString() === aboutSection.id.toString() &&
     (aboutSection.classList.add("flex"),
-    toSkills.classList.remove("display-none"));
-
-  // to work styling
-  section.id.toString() === skillsSection.id.toString() &&
-    toWork.classList.remove("display-none");
+    toWork.classList.remove("display-none"));
 
   // display the selected section
   section.classList.contains("hide")
@@ -294,92 +254,6 @@ const navAction = item => {
     : item.classList.contains("hide")
     ? (item.classList.add("visibile"), item.classList.remove("hide"))
     : (item.classList.add("hide"), item.classList.remove("visibile"));
-};
-
-// toggleSkills - function that  determines which skills content is to be displayed
-const toggleSkills = skill => {
-  let otherSkill =
-    skill.id === frontEndSkills.id ? otherSkills : frontEndSkills;
-  let animation = "fade-out";
-
-  /*
-  OPTION 1:
-  if skill selection is currently active, hide the content and display the skills section title (default setting)
-  */
-  skill.classList.contains("skill-selection-active")
-    ? //  remove the class and hide everything else
-      // remove the active selection class
-      (skill.classList.remove("skill-selection-active"),
-      // animate the backgrounds
-      bgOneAlt.classList.add("slide-out-y-no-fade"),
-      bgTwoAlt.classList.add("slide-out-y-no-fade"),
-      // close the content for the specific skill section
-      skill.id === frontEndSkills.id && barGraph.classList.add("slide-out-x"),
-      skill.id === otherSkills.id &&
-        otherSkillsContent.classList.add(animation),
-      // setTimeout() function to add display none and add the section title animation
-      // so the animation can be played first before displaying to none
-      setTimeout(() => {
-        bgOneAlt.classList.add("display-none");
-        bgTwoAlt.classList.add("display-none");
-        skill.id === frontEndSkills.id &&
-          barGraph.classList.add("display-none");
-        skill.id === otherSkills.id &&
-          otherSkillsContent.classList.add("display-none");
-        skillsTitle.classList.remove(animation);
-      }, 750))
-    : /* 
-    OPTION 2:
-    else if skill selection active on other skill section then hide the current content and then activate
-     the current skills styling and animations 
-     */
-    otherSkill.classList.contains("skill-selection-active")
-    ? // remove the other skill section title active class
-      (otherSkill.classList.remove("skill-selection-active"),
-      // add the active skill class to the currently selected section
-      skill.classList.add("skill-selection-active"),
-      // animate the backgrounds to swap colours
-      bgOneAlt.classList.add("slide-out-y-no-fade"),
-      bgTwoAlt.classList.add("slide-out-y-no-fade"),
-      // hide the otherSkills content
-      otherSkill.id === frontEndSkills.id &&
-        (barGraph.classList.add("slide-out-x"),
-        otherSkillsContent.classList.remove(animation),
-        otherSkillsContent.classList.remove("display-none")),
-      otherSkill.id === otherSkills.id &&
-        (otherSkillsContent.classList.add(animation),
-        barGraph.classList.remove("display-none"),
-        barGraph.classList.remove("slide-out-x")),
-      // remove the slide out animation of the current active skill content
-      skill.classList.remove("slide-out-y"),
-      setTimeout(() => {
-        bgOneAlt.classList.add("display-none");
-        bgTwoAlt.classList.add("display-none");
-        skill.id === otherSkills.id && barGraph.classList.add("display-none");
-        skill.id === frontEndSkills.id &&
-          otherSkillsContent.classList.add("display-none");
-      }, 750))
-    : /* 
-     OPTION 3:
-     ELSE if neither is valid just add the animations to the clicked skill section
-      */
-      // add the active skill selection class to the selected skill
-      (skill.classList.add("skill-selection-active"),
-      //animate the backgrounds to alternate the colours
-      bgOneAlt.classList.remove("display-none"),
-      bgTwoAlt.classList.remove("display-none"),
-      bgOneAlt.classList.remove("slide-out-y-no-fade"),
-      bgTwoAlt.classList.remove("slide-out-y-no-fade"),
-      //display the content for the specific skill section
-      skill.id === frontEndSkills.id &&
-        (barGraph.classList.remove("slide-out-x"),
-        barGraph.classList.remove("display-none")),
-      skill.id === otherSkills.id &&
-        (otherSkillsContent.classList.remove("display-none"),
-        otherSkillsContent.classList.remove(animation),
-        otherSkillsContent.classList.remove("slide-out-y")),
-      // add the fade out animation to the section title
-      skillsTitle.classList.add(animation));
 };
 
 // projectSlideOut - add slide out classes to project box children
@@ -455,7 +329,6 @@ const sectionClose = () => {
     ? (aboutSection.classList.remove("active"),
       aboutWrapper.classList.add("fade-out"),
       aboutTitle.classList.add("fade-out"),
-      toSkills.classList.add("fade-out"),
       setTimeout(() => {
         aboutHeader.classList.add("section-header-slide-out"),
           aboutContent.classList.add("about-content-slide-out");
@@ -470,39 +343,6 @@ const sectionClose = () => {
         aboutContent.classList.remove("about-content-slide-out");
         aboutWrapper.classList.remove("fade-out");
         aboutTitle.classList.remove("fade-out");
-        toSkills.classList.remove("fade-out");
-      }, 2250))
-    : /* SKILLS SECTION CLOSE */
-    skillsSection.classList.contains("active")
-    ? (skillsContent.classList.add("skill-box-anim-exit"),
-      skillsSection.classList.remove("active"),
-      toWork.classList.add("fade-out"),
-      !bgOneAlt.classList.contains("display-none")
-        ? setTimeout(() => {
-            bgOne.classList.add("display-none");
-            bgOneAlt.classList.add("slide-out-y-no-fade");
-            bgTwo.classList.add("display-none");
-            bgTwoAlt.classList.add("slide-out-y-no-fade");
-          }, 1250)
-        : setTimeout(() => {
-            bgOne.classList.add("slide-out-y-no-fade");
-            bgTwo.classList.add("slide-out-y-no-fade");
-          }, 1250),
-      setTimeout(() => {
-        // after animation is complete, remove the hide animations
-        bgOne.classList.remove("slide-out-y-no-fade");
-        bgOneAlt.classList.remove("slide-out-y-no-fade");
-        bgOneAlt.classList.add("display-none");
-        bgTwo.classList.remove("display-none");
-        bgOne.classList.remove("display-none");
-        bgTwo.classList.remove("slide-out-y-no-fade");
-        bgTwoAlt.classList.remove("slide-out-y-no-fade");
-        bgTwoAlt.classList.add("display-none");
-        skillsContent.classList.remove("skill-box-anim-exit");
-        // hide the section and remove active status
-        skillsSection.classList.add("display-none");
-        skillsSection.classList.add("hide");
-        toWork.classList.remove("fade-out");
       }, 2250))
     : /* WORK SECTION CLOSE */
       workSection.classList.contains("active") &&
@@ -512,7 +352,7 @@ const sectionClose = () => {
         // hide the section and remove active status
         workSection.classList.add("display-none");
         workSection.classList.add("hide");
-      }, 3250));
+      }, 2250));
 
   // hide the 'close section' button
   closeSection.classList.remove("visible");

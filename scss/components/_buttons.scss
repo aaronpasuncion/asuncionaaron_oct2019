@@ -25,22 +25,22 @@
 
 // button that controls navigation to the work section
 .to-work {
-  z-index: 9999;
-  transform: rotate(-90deg);
-  font-size: 0.5em;
+  font-size: 1.75em;
   font-weight: bold;
   position: absolute;
-  right: -255px;
-  color: $emphasize;
-  border: 2px solid $emphasize;
-  background: none;
+  z-index: 9999;
+  bottom: -22px;
+  align-self: flex-end;
+  background: $red;
+  border: 2px solid $red;
+  box-shadow: 5px 3px 20px 1px $dark-text;
+  color: $primary-text-color;
   padding: 0.1em 0.4em;
   cursor: pointer;
   transition: 1s all ease-out;
-
   &:hover {
-    background: $emphasize;
-    color: $dark-text;
+    border: 2px solid $dark-text;
+    background: $dark-text;
   }
 }
 
