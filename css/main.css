@@ -293,7 +293,7 @@ FADE ANIMATIONS
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: 1s all ease-out; }
+  transition: 0.5s all ease-out; }
   .nav-overlay .navigation {
     height: 100%;
     justify-content: center;
@@ -1233,7 +1233,7 @@ COMPONENTS
       height: 345px; }
   /* ABOUT */
   .about .section-header .section-title {
-    width: 420px;
+    width: 435px;
     font-size: 4.5em; }
   .about .about-content {
     padding: 5em; }
