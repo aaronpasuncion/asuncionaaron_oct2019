@@ -272,6 +272,8 @@ COMPONENTS
   width: 100%;
   color: $dark-text;
   overflow-y: scroll;
+  -ms-overflow-style: none; // IE 10+
+  overflow: -moz-scrollbars-none; // Firefox
 }
 
 //  re-useable
