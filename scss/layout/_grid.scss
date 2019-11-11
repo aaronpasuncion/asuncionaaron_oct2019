@@ -359,7 +359,7 @@ COMPONENTS
         right: 0;
         height: 3px;
         width: 1.5em;
-        background: $emphasize;
+        background: $red;
       }
     }
     .proj-desc {
@@ -396,7 +396,7 @@ COMPONENTS
         left: 0;
         height: 3px;
         width: 1.5em;
-        background: $emphasize;
+        background: $red;
       }
     }
     .proj-desc {
@@ -444,8 +444,8 @@ COMPONENTS
   width: 100%;
 
   .skill {
-    color: $emphasize;
-    border: 2px solid $emphasize;
+    color: $red;
+    border: 2px solid $red;
     text-align: center;
     padding: 0.25em;
     margin: 0.25em;
