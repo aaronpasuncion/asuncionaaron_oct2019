@@ -304,6 +304,11 @@ COMPONENTS
   transition: 1s all ease-out;
 
   .proj-img {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
     width: 50%;
     height: 250px;
   }
@@ -343,14 +348,23 @@ COMPONENTS
   &:nth-child(odd) {
     .proj-img {
       order: 1;
-      background: $dark-text;
+      background: $secondary-text-color;
       transform-origin: left;
       opacity: 0;
       transform: scaleX(0);
+      &::after {
+        content: "";
+        position: absolute;
+        top: 3em;
+        right: 0;
+        height: 3px;
+        width: 1.5em;
+        background: $emphasize;
+      }
     }
     .proj-desc {
       order: 2;
-      background: $primary-background;
+      background: $dark-text;
       transform-origin: right;
       opacity: 0;
       transform: scaleX(0);
@@ -371,14 +385,23 @@ COMPONENTS
   &:nth-child(even) {
     .proj-img {
       order: 2;
-      background: $dark-text;
+      background: $secondary-text-color;
       transform-origin: right;
       opacity: 0;
       transform: scaleX(0);
+      &::after {
+        content: "";
+        position: absolute;
+        top: 3em;
+        left: 0;
+        height: 3px;
+        width: 1.5em;
+        background: $emphasize;
+      }
     }
     .proj-desc {
       order: 1;
-      background: $primary-background;
+      background: $dark-text;
       transform-origin: left;
       opacity: 0;
       transform: scaleX(0);
@@ -410,6 +433,23 @@ COMPONENTS
     .proj-img {
       // background: $dark-text;
     }
+  }
+}
+
+.skills-used {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+
+  .skill {
+    color: $emphasize;
+    border: 2px solid $emphasize;
+    text-align: center;
+    padding: 0.25em;
+    margin: 0.25em;
+    font-size: 1em;
   }
 }
 
@@ -469,6 +509,7 @@ COMPONENTS
   justify-content: flex-start;
   align-items: center;
   opacity: 0;
+  overflow-y: scroll;
   animation: fade-in 1s forwards 1s;
 }
 
@@ -481,9 +522,9 @@ COMPONENTS
   height: 100%;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   margin: 1em;
 }
 

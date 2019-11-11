@@ -52,12 +52,13 @@
   /* WORK */
   .project-full {
     overflow-y: scroll;
+    h1 {
+      margin-top: 2em;
+    }
   }
   .project-preview {
     width: 100%;
     min-height: 10em;
-    margin-top: 30em;
-    margin-bottom: 2em;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -296,6 +297,13 @@
       .proj-img {
         transform-origin: top;
         transform: scaleY(0);
+        &::after {
+          top: auto;
+          right: 50%;
+          bottom: 0;
+          width: 3px;
+          height: 2.25em;
+        }
       }
       .proj-desc {
         transform-origin: bottom;
@@ -312,6 +320,12 @@
       .proj-img {
         transform-origin: bottom;
         transform: scaleY(0);
+        &::after {
+          top: 0;
+          left: 50%;
+          width: 3px;
+          height: 2.25em;
+        }
       }
       .proj-desc {
         transform-origin: top;
@@ -335,6 +349,15 @@
       .proj-img {
         // background: $dark-text;
       }
+    }
+  }
+
+  .skills-used {
+    flex-direction: column;
+    align-items: center;
+    .skill {
+      font-size: 1.25em;
+      margin: 0.5em;
     }
   }
 
