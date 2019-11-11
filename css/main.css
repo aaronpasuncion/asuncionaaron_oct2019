@@ -281,7 +281,7 @@ FADE ANIMATIONS
     background: #f9d423;
     transition: 0.5s all ease-out; }
   .nav:hover .nav-line {
-    background: #d5d5d5; }
+    background: #b19305; }
 
 .nav-overlay {
   z-index: 299;
@@ -289,7 +289,7 @@ FADE ANIMATIONS
   height: 100%;
   position: absolute;
   top: 0;
-  background: #000;
+  background: #303030;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -397,7 +397,7 @@ body {
     animation: home-load-before 2s forwards 1s;
     transition: 0.5s ease-out all; }
     .logo::before:hover {
-      border: #d5d5d5; }
+      border: #303030; }
   .logo::after {
     position: absolute;
     content: "";
@@ -574,6 +574,11 @@ COMPONENTS
   cursor: pointer;
   transition: 1s all ease-out; }
   .project-box .proj-img {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
     width: 50%;
     height: 250px; }
   .project-box .proj-desc {
@@ -604,13 +609,21 @@ COMPONENTS
       font-size: 1em; }
   .project-box:nth-child(odd) .proj-img {
     order: 1;
-    background: #000;
+    background: #303030;
     transform-origin: left;
     opacity: 0;
     transform: scaleX(0); }
+    .project-box:nth-child(odd) .proj-img::after {
+      content: "";
+      position: absolute;
+      top: 3em;
+      right: 0;
+      height: 3px;
+      width: 1.5em;
+      background: #f9d423; }
   .project-box:nth-child(odd) .proj-desc {
     order: 2;
-    background: #383838;
+    background: #000;
     transform-origin: right;
     opacity: 0;
     transform: scaleX(0); }
@@ -627,13 +640,21 @@ COMPONENTS
       z-index: -1; }
   .project-box:nth-child(even) .proj-img {
     order: 2;
-    background: #000;
+    background: #303030;
     transform-origin: right;
     opacity: 0;
     transform: scaleX(0); }
+    .project-box:nth-child(even) .proj-img::after {
+      content: "";
+      position: absolute;
+      top: 3em;
+      left: 0;
+      height: 3px;
+      width: 1.5em;
+      background: #f9d423; }
   .project-box:nth-child(even) .proj-desc {
     order: 1;
-    background: #383838;
+    background: #000;
     transform-origin: left;
     opacity: 0;
     transform: scaleX(0); }
@@ -654,6 +675,20 @@ COMPONENTS
   .project-box:hover .proj-desc .sub-title,
   .project-box:hover .proj-desc .proj-title {
     color: #000; }
+
+.skills-used {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%; }
+  .skills-used .skill {
+    color: #f9d423;
+    border: 2px solid #f9d423;
+    text-align: center;
+    padding: 0.25em;
+    margin: 0.25em;
+    font-size: 1em; }
 
 .project-1 .proj-img,
 .project-1 .proj-desc {
@@ -695,6 +730,7 @@ COMPONENTS
   justify-content: flex-start;
   align-items: center;
   opacity: 0;
+  overflow-y: scroll;
   animation: fade-in 1s forwards 1s; }
 
 .project-info {
@@ -705,9 +741,9 @@ COMPONENTS
   height: 100%;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   margin: 1em; }
 
 .project-preview {
@@ -834,8 +870,6 @@ COMPONENTS
     bottom: 0;
     left: 0;
     transition: 0.5s ease-out all; }
-    .close-section::before:hover {
-      border: #d5d5d5; }
   .close-section::after {
     position: absolute;
     content: "";
@@ -847,7 +881,6 @@ COMPONENTS
     right: 0;
     transition: 0.5s ease-out all; }
   .close-section:hover {
-    color: #d5d5d5;
     padding: 0 0.75em; }
 
 .close-project-btn {
@@ -899,11 +932,11 @@ COMPONENTS
   /* WORK */
   .project-full {
     overflow-y: scroll; }
+    .project-full h1 {
+      margin-top: 2em; }
   .project-preview {
     width: 100%;
-    min-height: 10em;
-    margin-top: 30em;
-    margin-bottom: 2em; } }
+    min-height: 10em; } }
 
 @media only screen and (min-width: 768px) {
   /* KEYFRAMES */
@@ -1062,6 +1095,12 @@ COMPONENTS
     .project-box:nth-child(odd) .proj-img {
       transform-origin: top;
       transform: scaleY(0); }
+      .project-box:nth-child(odd) .proj-img::after {
+        top: auto;
+        right: 50%;
+        bottom: 0;
+        width: 3px;
+        height: 2.25em; }
     .project-box:nth-child(odd) .proj-desc {
       transform-origin: bottom;
       transform: scaleY(0); }
@@ -1073,6 +1112,11 @@ COMPONENTS
     .project-box:nth-child(even) .proj-img {
       transform-origin: bottom;
       transform: scaleY(0); }
+      .project-box:nth-child(even) .proj-img::after {
+        top: 0;
+        left: 50%;
+        width: 3px;
+        height: 2.25em; }
     .project-box:nth-child(even) .proj-desc {
       transform-origin: top;
       transform: scaleY(0); }
@@ -1085,6 +1129,12 @@ COMPONENTS
         transition: height 0.5s ease; }
     .project-box:hover .proj-desc::after {
       height: 100%; }
+  .skills-used {
+    flex-direction: column;
+    align-items: center; }
+    .skills-used .skill {
+      font-size: 1.25em;
+      margin: 0.5em; }
   .project-full {
     padding: 3em; }
   .project-summary {
