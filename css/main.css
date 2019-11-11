@@ -620,7 +620,7 @@ COMPONENTS
       right: 0;
       height: 3px;
       width: 1.5em;
-      background: #f9d423; }
+      background: #d72323; }
   .project-box:nth-child(odd) .proj-desc {
     order: 2;
     background: #000;
@@ -651,7 +651,7 @@ COMPONENTS
       left: 0;
       height: 3px;
       width: 1.5em;
-      background: #f9d423; }
+      background: #d72323; }
   .project-box:nth-child(even) .proj-desc {
     order: 1;
     background: #000;
@@ -683,8 +683,8 @@ COMPONENTS
   flex-wrap: wrap;
   width: 100%; }
   .skills-used .skill {
-    color: #f9d423;
-    border: 2px solid #f9d423;
+    color: #d72323;
+    border: 2px solid #d72323;
     text-align: center;
     padding: 0.25em;
     margin: 0.25em;
